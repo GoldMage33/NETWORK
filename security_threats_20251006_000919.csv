@@ -1,0 +1,51 @@
+timestamp,threat_type,threat_level,frequency_range,description,peak_amplitude
+2025-10-06 00:09:05.867440,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.22911477788736345
+2025-10-06 00:09:05.867440,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.3092263735846208
+2025-10-06 00:09:05.867440,steganography,1.0,"(9600, 9800)",Hidden data transmission patterns,0.2904355048064081
+2025-10-06 00:09:05.867440,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.19639388261577162
+2025-10-06 00:09:06.187806,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.3214184489272012
+2025-10-06 00:09:06.187806,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.29900391626872447
+2025-10-06 00:09:06.187806,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.34545434145839127
+2025-10-06 00:09:06.187806,steganography,1.0,"(9600, 9800)",Hidden data transmission patterns,0.3165446357782923
+2025-10-06 00:09:06.187806,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.2574203336655633
+2025-10-06 00:09:06.488625,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.32596053449033857
+2025-10-06 00:09:06.488625,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.2540658098372922
+2025-10-06 00:09:06.488625,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.3642155322640933
+2025-10-06 00:09:06.488625,steganography,1.0,"(9600, 9800)",Hidden data transmission patterns,0.2375707396232842
+2025-10-06 00:09:06.488625,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.20092981364260154
+2025-10-06 00:09:06.783715,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.442319684354546
+2025-10-06 00:09:06.783715,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.24744063823599108
+2025-10-06 00:09:06.783715,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.2774954236369753
+2025-10-06 00:09:06.783715,steganography,1.0,"(9600, 9800)",Hidden data transmission patterns,0.22669075087875468
+2025-10-06 00:09:06.783715,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.20049980325801925
+2025-10-06 00:09:07.094981,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.3895847256504293
+2025-10-06 00:09:07.094981,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.18106202495189058
+2025-10-06 00:09:07.094981,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.18367363068823045
+2025-10-06 00:09:07.392908,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.2189314347199026
+2025-10-06 00:09:07.997691,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.18572114044265375
+2025-10-06 00:09:07.997691,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.17436931307105988
+2025-10-06 00:09:07.997691,steganography,1.0,"(9600, 9800)",Hidden data transmission patterns,0.16804918168226834
+2025-10-06 00:09:07.997691,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.24990798038096976
+2025-10-06 00:09:08.319630,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.2654559335065351
+2025-10-06 00:09:08.319630,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.3455730781072346
+2025-10-06 00:09:08.319630,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.2792151427785091
+2025-10-06 00:09:08.319630,steganography,1.0,"(9600, 9800)",Hidden data transmission patterns,0.2731618418231611
+2025-10-06 00:09:08.319630,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.36805876770699353
+2025-10-06 00:09:08.620874,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.34230482922884614
+2025-10-06 00:09:08.620874,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.3969732000254153
+2025-10-06 00:09:08.620874,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.36413226578502017
+2025-10-06 00:09:08.620874,steganography,1.0,"(9600, 9800)",Hidden data transmission patterns,0.31930715029758583
+2025-10-06 00:09:08.620874,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.4125484065834637
+2025-10-06 00:09:08.916118,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.460797668500459
+2025-10-06 00:09:08.916118,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.4106481286282214
+2025-10-06 00:09:08.916118,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.31839635756729023
+2025-10-06 00:09:08.916118,steganography,1.0,"(9600, 9800)",Hidden data transmission patterns,0.3053751325161776
+2025-10-06 00:09:08.916118,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.35227718193914354
+2025-10-06 00:09:09.209547,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.3732317902161656
+2025-10-06 00:09:09.209547,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.29521928478467374
+2025-10-06 00:09:09.209547,backdoors,1.0,"(9400, 9600)",Backdoor communication signatures,0.25270124341162736
+2025-10-06 00:09:09.209547,steganography,1.0,"(9600, 9800)",Hidden data transmission patterns,0.2063420403147303
+2025-10-06 00:09:09.209547,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.27856704190912474
+2025-10-06 00:09:09.527278,malware_c2,1.0,"(9000, 9200)",Command and control communication patterns,0.36565728535174846
+2025-10-06 00:09:09.527278,exfiltration,1.0,"(9200, 9400)",Potential data exfiltration activity,0.19061416168594655
+2025-10-06 00:09:09.527278,anomalous_traffic,1.0,"(9800, 10000)",Unusual network traffic patterns,0.18838263579555195
