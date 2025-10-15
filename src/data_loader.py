@@ -4,7 +4,17 @@ Data loading utilities for frequency analysis.
 
 import pandas as pd
 import numpy as np
-from typing import Dict, Optional
+from typing import Dict, Optional, List
+import os
+import sys
+
+# Try to import hardware collector
+try:
+    from .ats20_receiver import HardwareDataCollector
+    HARDWARE_AVAILABLE = True
+except ImportError:
+    HARDWARE_AVAILABLE = False
+    HardwareDataCollector = None
 
 
 class DataLoader:
@@ -153,9 +163,43 @@ class DataLoader:
         else:
             raise ValueError(f"Unsupported output format: {file_path}")
             
-        print(f"Data saved to {file_path}")
+    def load_hardware_data(self, duration: float = 1.0, use_hardware: bool = True) -> Dict[str, pd.DataFrame]:
+        """
+        Load data from hardware sources (or simulate if not available).
         
-    def get_data_info(self, data: pd.DataFrame) -> Dict:
+        Args:
+            duration (float): Collection duration in seconds
+            use_hardware (bool): Whether to attempt hardware collection
+            
+        Returns:
+            Dict[str, pd.DataFrame]: Hardware frequency data
+        """
+        if not HARDWARE_AVAILABLE:
+            print("Hardware collection not available. Install required libraries.")
+            return {}
+            
+        collector = HardwareDataCollector()
+        
+        try:
+            # Try to initialize hardware
+            audio_ok = collector.initialize_audio() if use_hardware else False
+            sdr_ok = collector.initialize_sdr() if use_hardware else False
+            
+            if audio_ok or sdr_ok:
+                print("✓ Hardware devices initialized")
+            else:
+                print("⚠ Using simulated hardware data")
+            
+            # Collect data
+            data = collector.collect_hardware_data(duration, duration)
+            
+            collector.cleanup()
+            return data
+            
+        except Exception as e:
+            print(f"Hardware data collection failed: {e}")
+            collector.cleanup()
+            return {}
         """
         Get summary information about frequency data.
         

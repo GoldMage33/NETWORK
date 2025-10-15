@@ -5,12 +5,14 @@ Main example script demonstrating the Network Frequency Analysis Tool.
 
 import sys
 import os
+import argparse
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 from src.frequency_analyzer import FrequencyAnalyzer
+from src.data_loader import DataLoader
 
 
-def main():
+def main(use_hardware=False, hardware_duration=1.0):
     """Main demonstration function."""
     print("NETWORK FREQUENCY ANALYSIS TOOL")
     print("=" * 40)
@@ -19,11 +21,30 @@ def main():
     analyzer = FrequencyAnalyzer(resolution_hz=100.0)
     print("✓ Analyzer initialized")
 
-    # Load frequency data
-    print("Loading frequency data...")
-    analyzer.load_audio_frequencies('data/sample_audio.csv')
-    analyzer.load_radio_frequencies('data/sample_radio.csv')
-    print("✓ Data loaded")
+    if use_hardware:
+        # Load hardware data
+        print("Loading hardware frequency data...")
+        loader = DataLoader()
+        hw_data = loader.load_hardware_data(hardware_duration, use_hardware=True)
+        
+        if hw_data:
+            # Set analyzer data directly
+            if 'audio' in hw_data:
+                analyzer.audio_data = hw_data['audio']
+                print(f"✓ Loaded {len(hw_data['audio'])} hardware audio frequency points")
+            if 'radio' in hw_data:
+                analyzer.radio_data = hw_data['radio']
+                print(f"✓ Loaded {len(hw_data['radio'])} hardware radio frequency points")
+        else:
+            print("⚠ Hardware data collection failed, falling back to sample data")
+            use_hardware = False
+    
+    if not use_hardware:
+        # Load sample frequency data
+        print("Loading frequency data...")
+        analyzer.load_audio_frequencies('data/sample_audio.csv')
+        analyzer.load_radio_frequencies('data/sample_radio.csv')
+        print("✓ Data loaded")
 
     # Combine and analyze
     combined_data = analyzer.combine_frequency_data()
@@ -60,4 +81,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description='NETWORK Frequency Analysis Tool')
+    parser.add_argument('--hardware', action='store_true', 
+                       help='Use hardware data collection instead of sample data')
+    parser.add_argument('--duration', type=float, default=1.0,
+                       help='Hardware data collection duration in seconds')
+    
+    args = parser.parse_args()
+    main(use_hardware=args.hardware, hardware_duration=args.duration)
