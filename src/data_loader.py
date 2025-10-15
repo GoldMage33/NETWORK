@@ -10,7 +10,7 @@ import sys
 
 # Try to import hardware collector
 try:
-    from .ats20_receiver import HardwareDataCollector
+    from .hardware_input_data_receiver import HardwareDataCollector
     HARDWARE_AVAILABLE = True
 except ImportError:
     HARDWARE_AVAILABLE = False
@@ -50,9 +50,8 @@ class DataLoader:
             return data
             
         except FileNotFoundError:
-            # Generate sample data if file doesn't exist
-            print(f"File not found: {file_path}. Generating sample data.")
-            return self._generate_sample_data(data_type)
+            # Raise error instead of generating sample data
+            raise FileNotFoundError(f"Data file not found: {file_path}. Please provide valid frequency data files.")
             
     def _validate_frequency_data(self, data: pd.DataFrame, data_type: str) -> pd.DataFrame:
         """
@@ -113,8 +112,8 @@ class DataLoader:
             pd.DataFrame: Sample frequency data
         """
         if data_type == 'audio':
-            # Audio frequency range: 20 Hz to 20 kHz
-            frequencies = np.logspace(np.log10(20), np.log10(20000), n_samples)
+            # Audio frequency range: 0 Hz to 20 kHz
+            frequencies = np.linspace(0, 20000, n_samples)
             # Typical audio spectrum with some peaks
             amplitudes = (
                 np.random.exponential(0.1, n_samples) + 
@@ -183,15 +182,14 @@ class DataLoader:
         try:
             # Try to initialize hardware
             audio_ok = collector.initialize_audio() if use_hardware else False
-            sdr_ok = collector.initialize_sdr() if use_hardware else False
             
-            if audio_ok or sdr_ok:
-                print("✓ Hardware devices initialized")
+            if audio_ok:
+                print("✓ Audio hardware initialized")
             else:
-                print("⚠ Using simulated hardware data")
+                print("⚠ Using simulated audio data")
             
             # Collect data
-            data = collector.collect_hardware_data(duration, duration)
+            data = collector.collect_hardware_data(duration)
             
             collector.cleanup()
             return data

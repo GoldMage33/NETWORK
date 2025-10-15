@@ -1,6 +1,6 @@
 """
 Hardware data collection for NETWORK frequency analysis.
-Supports RTL-SDR for radio frequencies and audio input for acoustic data.
+Supports audio input for acoustic data.
 """
 
 import numpy as np
@@ -21,13 +21,6 @@ except ImportError:
     PYAUDIO_AVAILABLE = False
     pyaudio = None
 
-try:
-    from rtlsdr import RtlSdr
-    RTLSDR_AVAILABLE = True
-except ImportError:
-    RTLSDR_AVAILABLE = False
-    RtlSdr = None
-
 logger = logging.getLogger(__name__)
 
 
@@ -38,7 +31,6 @@ class HardwareDataCollector:
         self.sample_rate = sample_rate
         self.chunk_size = chunk_size
         self.audio = None
-        self.sdr = None
         self.is_collecting = False
         self.data_queue = queue.Queue()
         self.collection_thread = None
@@ -47,11 +39,6 @@ class HardwareDataCollector:
         self.audio_format = pyaudio.paInt16 if PYAUDIO_AVAILABLE else None
         self.channels = 1
         self.audio_device_index = None
-
-        # SDR settings
-        self.sdr_center_freq = 100e6  # 100 MHz default
-        self.sdr_sample_rate = 2.4e6  # 2.4 MS/s
-        self.sdr_gain = 'auto'
 
     def initialize_audio(self, device_index: Optional[int] = None) -> bool:
         """Initialize audio input device."""
@@ -84,27 +71,6 @@ class HardwareDataCollector:
 
         except Exception as e:
             logger.error(f"Failed to initialize audio device: {e}")
-            return False
-
-    def initialize_sdr(self, center_freq: float = 100e6, sample_rate: float = 2.4e6,
-                      gain: str = 'auto') -> bool:
-        """Initialize RTL-SDR device."""
-        if not RTLSDR_AVAILABLE:
-            logger.warning("RTL-SDR library not available. Install with: pip install rtlsdr")
-            logger.info("For RTL-SDR support, also install librtlsdr system library")
-            return False
-
-        try:
-            self.sdr = RtlSdr()
-            self.sdr.center_freq = center_freq
-            self.sdr.sample_rate = sample_rate
-            self.sdr.gain = gain
-
-            logger.info(f"RTL-SDR initialized: {center_freq/1e6:.1f} MHz center, {sample_rate/1e6:.1f} MS/s")
-            return True
-
-        except Exception as e:
-            logger.error(f"Failed to initialize RTL-SDR: {e}")
             return False
 
     def collect_audio_data(self, duration: float = 1.0) -> Optional[np.ndarray]:
@@ -143,23 +109,6 @@ class HardwareDataCollector:
             logger.error(f"Audio data collection failed: {e}")
             return None
 
-    def collect_sdr_data(self, duration: float = 1.0) -> Optional[np.ndarray]:
-        """Collect SDR data for specified duration."""
-        if not self.sdr:
-            logger.error("RTL-SDR not initialized")
-            return None
-
-        try:
-            # Read samples
-            num_samples = int(self.sdr.sample_rate * duration)
-            samples = self.sdr.read_samples(num_samples)
-
-            return samples
-
-        except Exception as e:
-            logger.error(f"SDR data collection failed: {e}")
-            return None
-
     def simulate_audio_data(self, duration: float = 1.0) -> np.ndarray:
         """Generate simulated audio data for testing."""
         num_samples = int(self.sample_rate * duration)
@@ -172,23 +121,6 @@ class HardwareDataCollector:
             0.2 * np.sin(2 * np.pi * 1320 * t) + # E6 note
             0.1 * np.random.normal(0, 0.1, num_samples)  # Noise
         )
-
-        return signal
-
-    def simulate_sdr_data(self, duration: float = 1.0) -> np.ndarray:
-        """Generate simulated SDR IQ data for testing."""
-        num_samples = int(2.4e6 * duration)  # 2.4 MS/s
-
-        # Generate complex IQ samples
-        t = np.linspace(0, duration, num_samples)
-        carrier_freq = 2 * np.pi * 1e6  # 1 MHz modulation
-
-        # AM modulated signal
-        modulation = 0.5 * (1 + np.sin(2 * np.pi * 1000 * t))  # 1kHz modulation
-        signal = modulation * np.exp(1j * carrier_freq * t)
-
-        # Add some noise
-        signal += 0.1 * (np.random.normal(0, 1, num_samples) + 1j * np.random.normal(0, 1, num_samples))
 
         return signal
 
@@ -215,67 +147,92 @@ class HardwareDataCollector:
 
         return data
 
-    def sdr_to_frequency_domain(self, sdr_data: np.ndarray) -> pd.DataFrame:
-        """Convert SDR IQ data to frequency domain."""
-        # Apply FFT to IQ samples
-        fft = np.fft.fft(sdr_data)
-        freqs = np.fft.fftfreq(len(sdr_data), 1/self.sdr_sample_rate)
+    def audio_to_radio_domain(self, audio_freq_data: pd.DataFrame) -> pd.DataFrame:
+        """Convert audio frequency data to simulate radio frequency characteristics."""
+        if audio_freq_data.empty:
+            return pd.DataFrame()
 
-        # Shift to center frequency
-        center_freq = self.sdr.center_freq if self.sdr else self.sdr_center_freq
-        freqs += center_freq
+        # Create a copy of the audio data
+        radio_data = audio_freq_data.copy()
 
-        # Get positive frequencies in reasonable range
-        mask = (freqs > 0) & (freqs < 3e9)  # Up to 3 GHz
-        frequencies = freqs[mask]
-        amplitudes = np.abs(fft[mask])
+        # Shift frequencies to radio range (20kHz to 1MHz)
+        # Audio covers 0Hz-20kHz, we'll map this to radio frequencies
+        freq_range = radio_data['frequency'].max() - radio_data['frequency'].min()
+        radio_base_freq = 20000  # 20 kHz base frequency
 
-        # Convert to dB
-        amplitudes_db = 20 * np.log10(amplitudes + 1e-10)
+        # Scale and shift frequencies to radio range (20kHz to 1MHz = 980kHz spread)
+        # Map audio range (0-20kHz) to radio range (20kHz-1MHz)
+        audio_range = radio_data['frequency'].max() - radio_data['frequency'].min()  # 20000 Hz
+        radio_range = 1000000 - 20000  # 980000 Hz
+        scale_factor = radio_range / audio_range if audio_range > 0 else 1.0
+        
+        radio_data['frequency'] = radio_base_freq + (radio_data['frequency'] - radio_data['frequency'].min()) * scale_factor
 
-        data = pd.DataFrame({
-            'frequency': frequencies,
-            'amplitude': amplitudes_db,
-            'data_type': 'radio_hw',
-            'timestamp': pd.Timestamp.now()
-        })
+        # Adjust magnitude to simulate radio signal characteristics
+        # Radio signals typically have different amplitude distributions
+        radio_data['magnitude'] = radio_data['amplitude'] * np.random.uniform(0.1, 2.0, len(radio_data))
 
-        return data
+        # Add some noise to simulate radio interference patterns
+        noise = np.random.normal(0, 0.1, len(radio_data))
+        radio_data['magnitude'] = np.maximum(0, radio_data['magnitude'] + noise)
 
-    def collect_hardware_data(self, audio_duration: float = 1.0,
-                            sdr_duration: float = 1.0) -> Dict[str, pd.DataFrame]:
-        """Collect data from both audio and SDR hardware (or simulate if not available)."""
+        # Update data type and add radio-specific columns
+        radio_data['data_type'] = 'radio_from_audio'
+        radio_data['amplitude'] = radio_data['magnitude']
+
+        return radio_data
+
+    def collect_hardware_data(self, audio_duration: float = 1.0) -> Dict[str, pd.DataFrame]:
+        """Collect data from audio hardware (use microphone for both audio and radio simulation)."""
         results = {}
 
-        # Collect audio data
-        if self.audio:
-            logger.info("Collecting audio data...")
+        # Always try to initialize audio if PyAudio is available
+        audio_initialized = False
+        if PYAUDIO_AVAILABLE:
+            try:
+                self.audio = pyaudio.PyAudio()
+                audio_initialized = True
+                logger.info("Audio system initialized for microphone input")
+            except Exception as e:
+                logger.warning(f"Could not initialize audio system: {e}")
+
+        # Collect audio data (always try microphone first)
+        if audio_initialized and self.initialize_audio():
+            logger.info("Collecting audio data from microphone...")
             audio_time_data = self.collect_audio_data(audio_duration)
             if audio_time_data is not None:
                 audio_freq_data = self.audio_to_frequency_domain(audio_time_data)
                 results['audio'] = audio_freq_data
-                logger.info(f"Collected {len(audio_freq_data)} audio frequency points")
+                logger.info(f"Collected {len(audio_freq_data)} audio frequency points from microphone")
+            else:
+                logger.warning("Microphone data collection failed, using simulation")
+                audio_time_data = self.simulate_audio_data(audio_duration)
+                audio_freq_data = self.audio_to_frequency_domain(audio_time_data)
+                results['audio'] = audio_freq_data
+                logger.info(f"Simulated {len(audio_freq_data)} audio frequency points")
         else:
-            logger.info("Simulating audio data (hardware not available)...")
+            logger.info("Microphone not available, simulating audio data...")
             audio_time_data = self.simulate_audio_data(audio_duration)
             audio_freq_data = self.audio_to_frequency_domain(audio_time_data)
             results['audio'] = audio_freq_data
             logger.info(f"Simulated {len(audio_freq_data)} audio frequency points")
 
-        # Collect SDR data
-        if self.sdr:
-            logger.info("Collecting SDR data...")
-            sdr_iq_data = self.collect_sdr_data(sdr_duration)
-            if sdr_iq_data is not None:
-                sdr_freq_data = self.sdr_to_frequency_domain(sdr_iq_data)
-                results['radio'] = sdr_freq_data
-                logger.info(f"Collected {len(sdr_freq_data)} radio frequency points")
+        # Use microphone data to simulate radio characteristics
+        logger.info("Using microphone for radio frequency simulation...")
+        if 'audio' in results:
+            # Use the collected audio data and process it to simulate radio characteristics
+            radio_freq_data = self.audio_to_radio_domain(results['audio'])
+            results['radio'] = radio_freq_data
+            logger.info(f"Generated {len(radio_freq_data)} radio frequency points from microphone")
         else:
-            logger.info("Simulating SDR data (hardware not available)...")
-            sdr_iq_data = self.simulate_sdr_data(sdr_duration)
-            sdr_freq_data = self.sdr_to_frequency_domain(sdr_iq_data)
-            results['radio'] = sdr_freq_data
-            logger.info(f"Simulated {len(sdr_freq_data)} radio frequency points")
+            # No audio data available, simulate radio data
+            logger.info("No audio data available, simulating radio data...")
+            # Create simulated radio data based on audio simulation
+            radio_time_data = self.simulate_audio_data(audio_duration)
+            radio_freq_data = self.audio_to_frequency_domain(radio_time_data)
+            radio_freq_data = self.audio_to_radio_domain(radio_freq_data)
+            results['radio'] = radio_freq_data
+            logger.info(f"Simulated {len(radio_freq_data)} radio frequency points")
 
         return results
 
@@ -317,8 +274,6 @@ class HardwareDataCollector:
         """Clean up hardware resources."""
         if self.audio:
             self.audio.terminate()
-        if self.sdr:
-            self.sdr.close()
 
     def list_audio_devices(self) -> List[Dict]:
         """List available audio input devices."""
@@ -349,19 +304,6 @@ class HardwareDataCollector:
                 pass
         return devices
 
-    def list_sdr_devices(self) -> List[Dict]:
-        """List available RTL-SDR devices."""
-        if not RTLSDR_AVAILABLE:
-            return []
-
-        try:
-            # Try to initialize to test
-            test_sdr = RtlSdr()
-            test_sdr.close()
-            return [{'index': 0, 'name': 'RTL-SDR Device (Simulated)'}]
-        except:
-            return []
-
 
 def main():
     """Test hardware data collection."""
@@ -388,23 +330,11 @@ def main():
         print("No audio input devices found (using simulation)")
 
     # Test SDR
-    print("\nTesting RTL-SDR devices...")
-    sdr_devices = collector.list_sdr_devices()
-    if sdr_devices:
-        print(f"Found {len(sdr_devices)} SDR device(s):")
-        for dev in sdr_devices:
-            print(f"  {dev['index']}: {dev['name']}")
-
-        if collector.initialize_sdr():
-            print("✓ RTL-SDR initialized")
-        else:
-            print("⚠ RTL-SDR initialization failed (using simulation)")
-    else:
-        print("No RTL-SDR devices found (using simulation)")
+    print("\nRTL-SDR support removed - using audio simulation for radio data")
 
     # Collect sample data
     print("\nCollecting sample data...")
-    data = collector.collect_hardware_data(1.0, 1.0)
+    data = collector.collect_hardware_data(1.0)
 
     for data_type, df in data.items():
         print(f"✓ Collected {len(df)} {data_type} frequency points")

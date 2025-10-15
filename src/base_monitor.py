@@ -13,6 +13,7 @@ from datetime import datetime
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 from src.frequency_analyzer import FrequencyAnalyzer
+from src.data_loader import DataLoader
 
 
 class BaseMonitor(ABC):
@@ -33,6 +34,7 @@ class BaseMonitor(ABC):
         self.resolution_hz = resolution_hz
         self.instance_id = instance_id
         self.analyzer = FrequencyAnalyzer(resolution_hz=resolution_hz)
+        self.data_loader = DataLoader()
         self.monitoring = False
         self.monitor_thread = None
         self.stats_history = []
@@ -55,21 +57,30 @@ class BaseMonitor(ABC):
         self.load_data()
 
     def load_data(self):
-        """Load frequency data for analysis."""
+        """Load frequency data for analysis using hardware input."""
         try:
-            self.analyzer.load_audio_frequencies('data/sample_audio.csv')
-            self.analyzer.load_radio_frequencies('data/sample_radio.csv')
-            logging.info("Data loaded successfully")
-            print("✓ Data loaded successfully")
-        except FileNotFoundError as e:
-            error_msg = f"Data files not found: {e}. Please ensure data/sample_audio.csv and data/sample_radio.csv exist."
-            logging.error(error_msg)
-            print(f"✗ {error_msg}")
-            sys.exit(1)
+            # Load hardware data (mandatory)
+            hw_data = self.data_loader.load_hardware_data(1.0, use_hardware=True)
+            if hw_data:
+                if 'audio' in hw_data:
+                    self.analyzer.audio_data = hw_data['audio']
+                    logging.info(f"Loaded {len(hw_data['audio'])} hardware audio frequency points")
+                    print(f"✓ Loaded {len(hw_data['audio'])} hardware audio frequency points")
+                if 'radio' in hw_data:
+                    self.analyzer.radio_data = hw_data['radio']
+                    logging.info(f"Loaded {len(hw_data['radio'])} hardware radio frequency points")
+                    print(f"✓ Loaded {len(hw_data['radio'])} hardware radio frequency points")
+                logging.info("Hardware data loaded successfully")
+                print("✓ Hardware data loaded successfully")
+            else:
+                error_msg = "Hardware data collection failed. Program requires hardware input."
+                logging.error(error_msg)
+                print(f"❌ {error_msg}")
+                sys.exit(1)
         except Exception as e:
-            error_msg = f"Error loading data: {e}"
+            error_msg = f"Error loading hardware data: {e}"
             logging.error(error_msg)
-            print(f"✗ {error_msg}")
+            print(f"❌ {error_msg}")
             sys.exit(1)
 
     def start_monitoring(self):

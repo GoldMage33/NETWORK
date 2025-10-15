@@ -12,6 +12,7 @@ from datetime import datetime
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 from src.frequency_analyzer import FrequencyAnalyzer
+from src.data_loader import DataLoader
 
 
 def load_log_data(log_files):
@@ -50,19 +51,28 @@ def get_system_info():
 
 
 def get_frequency_analysis_data():
-    """Get current frequency analysis results."""
+    """Get current frequency analysis results using hardware input."""
     try:
         analyzer = FrequencyAnalyzer(resolution_hz=100.0)
-        analyzer.load_audio_frequencies('data/sample_audio.csv')
-        analyzer.load_radio_frequencies('data/sample_radio.csv')
+        data_loader = DataLoader()
+        
+        # Load hardware data (mandatory)
+        hw_data = data_loader.load_hardware_data(1.0, use_hardware=True)
+        if hw_data:
+            if 'audio' in hw_data:
+                analyzer.audio_data = hw_data['audio']
+            if 'radio' in hw_data:
+                analyzer.radio_data = hw_data['radio']
+        else:
+            return {'error': 'Hardware data collection failed. Program requires hardware input.'}
 
         results = analyzer.detect_layer_anomalies()
 
         return {
             'analyzer_config': {
                 'resolution_hz': 100.0,
-                'audio_samples_loaded': 31,
-                'radio_samples_loaded': 31
+                'audio_samples_loaded': len(hw_data.get('audio', [])),
+                'radio_samples_loaded': len(hw_data.get('radio', []))
             },
             'analysis_results': {
                 'anomaly_score': results.get('anomaly_score', 0),
