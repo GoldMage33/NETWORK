@@ -1,0 +1,9 @@
+NETWORK Analysis Cycle #1
+Timestamp: 2025-10-15 11:59:24
+==================================================
+
+ANALYSIS RESULTS:
+Anomaly Score: 0.415
+Leakage Points: 1225
+Obscured Layers: 0
+Network Layers: 10

@@ -15,6 +15,15 @@ import platform
 
 # Try to import hardware libraries
 try:
+    import sounddevice as sd
+    import numpy as np
+    SOUNDDEVICE_AVAILABLE = True
+except ImportError:
+    SOUNDDEVICE_AVAILABLE = False
+    sd = None
+
+# Legacy PyAudio support (deprecated)
+try:
     import pyaudio
     PYAUDIO_AVAILABLE = True
 except ImportError:
@@ -30,83 +39,136 @@ class HardwareDataCollector:
     def __init__(self, sample_rate: int = 44100, chunk_size: int = 1024):
         self.sample_rate = sample_rate
         self.chunk_size = chunk_size
-        self.audio = None
+        self.audio_initialized = False
         self.is_collecting = False
         self.data_queue = queue.Queue()
         self.collection_thread = None
 
-        # Audio settings
-        self.audio_format = pyaudio.paInt16 if PYAUDIO_AVAILABLE else None
+        # Audio settings for sounddevice
         self.channels = 1
         self.audio_device_index = None
 
     def initialize_audio(self, device_index: Optional[int] = None) -> bool:
-        """Initialize audio input device."""
-        if not PYAUDIO_AVAILABLE:
-            logger.warning("PyAudio not available. Install with: pip install pyaudio")
+        """Initialize audio input device using sounddevice."""
+        if not SOUNDDEVICE_AVAILABLE:
+            logger.warning("Sounddevice not available. Install with: pip install sounddevice")
             return False
 
         try:
-            self.audio = pyaudio.PyAudio()
+            # Check available devices first
+            devices = sd.query_devices()
+            input_devices = [i for i, dev in enumerate(devices) if dev['max_input_channels'] > 0]
 
-            # Find suitable input device
+            if not input_devices:
+                logger.warning("No input audio devices found")
+                return False
+
+            # Use specified device or find best available
             if device_index is None:
-                device_index = self.audio.get_default_input_device_info()['index']
+                try:
+                    device_index = sd.default.device[0]  # Default input device
+                    if device_index not in input_devices:
+                        device_index = input_devices[0]  # Use first available input device
+                except:
+                    device_index = input_devices[0]  # Fallback to first input device
 
             self.audio_device_index = device_index
 
-            # Test device
-            stream = self.audio.open(
-                format=self.audio_format,
-                channels=self.channels,
-                rate=self.sample_rate,
-                input=True,
-                input_device_index=device_index,
-                frames_per_buffer=self.chunk_size
-            )
-            stream.close()
+            # Test recording a small sample with better error handling
+            try:
+                test_duration = 0.05  # Very short test
+                test_recording = sd.rec(int(self.sample_rate * test_duration),
+                                      samplerate=self.sample_rate,
+                                      channels=self.channels,
+                                      device=device_index)
+                sd.wait()  # Wait for recording to complete
 
-            logger.info(f"Audio device initialized: {self.audio.get_device_info_by_index(device_index)['name']}")
-            return True
+                # Check if we got valid data
+                if test_recording is not None and len(test_recording) > 0:
+                    device_info = sd.query_devices(device_index)
+                    logger.info(f"Audio device initialized: {device_info['name']}")
+                    self.audio_initialized = True
+                    return True
+                else:
+                    logger.warning("Test recording returned no data")
+                    return False
+
+            except sd.PortAudioError as e:
+                logger.error(f"PortAudio error during device test: {e}")
+                return False
+            except Exception as e:
+                logger.error(f"Device test failed: {e}")
+                return False
 
         except Exception as e:
             logger.error(f"Failed to initialize audio device: {e}")
             return False
 
     def collect_audio_data(self, duration: float = 1.0) -> Optional[np.ndarray]:
-        """Collect audio data for specified duration."""
-        if not self.audio:
+        """Collect audio data for specified duration using sounddevice."""
+        if not self.audio_initialized:
             logger.error("Audio device not initialized")
             return None
 
         try:
-            stream = self.audio.open(
-                format=self.audio_format,
-                channels=self.channels,
-                rate=self.sample_rate,
-                input=True,
-                input_device_index=self.audio_device_index,
-                frames_per_buffer=self.chunk_size
-            )
+            # Record audio with comprehensive error handling
+            num_samples = int(self.sample_rate * duration)
 
-            frames = []
-            num_chunks = int(self.sample_rate / self.chunk_size * duration)
+            logger.debug(f"Starting audio recording: {num_samples} samples, {duration}s")
 
-            for _ in range(num_chunks):
-                data = stream.read(self.chunk_size, exception_on_overflow=False)
-                frames.append(data)
+            recording = sd.rec(num_samples,
+                             samplerate=self.sample_rate,
+                             channels=self.channels,
+                             device=self.audio_device_index)
 
-            stream.stop_stream()
-            stream.close()
+            # Wait for recording to complete
+            try:
+                sd.wait()  # Wait for recording to complete
+            except Exception as e:
+                logger.error(f"Error waiting for recording: {e}")
+                return None
 
-            # Convert to numpy array
-            audio_data = np.frombuffer(b''.join(frames), dtype=np.int16)
-            audio_data = audio_data.astype(np.float32) / 32768.0  # Normalize to [-1, 1]
+            # Validate recording
+            if recording is None:
+                logger.error("Recording returned None")
+                return None
 
+            if len(recording) == 0:
+                logger.error("Recording returned empty array")
+                return None
+
+            # Convert to proper format
+            audio_data = recording.flatten().astype(np.float32)
+
+            # Additional validation
+            if len(audio_data) != num_samples:
+                logger.warning(f"Recording length mismatch: expected {num_samples}, got {len(audio_data)}")
+
+            # Check for all-zero or invalid data
+            if np.all(audio_data == 0):
+                logger.warning("Audio data is all zeros - no signal detected")
+                return None
+
+            if not np.isfinite(audio_data).all():
+                logger.warning("Audio data contains invalid values")
+                return None
+
+            # Check signal level
+            rms_level = np.sqrt(np.mean(audio_data**2))
+            if rms_level < 1e-6:  # Very quiet
+                logger.warning(f"Very low audio signal level: {rms_level}")
+                # Still return data, but log the warning
+
+            logger.debug(f"Audio recording successful: {len(audio_data)} samples, RMS: {rms_level:.6f}")
             return audio_data
 
+        except sd.PortAudioError as e:
+            logger.error(f"PortAudio error during recording: {e}")
+            return None
         except Exception as e:
             logger.error(f"Audio data collection failed: {e}")
+            import traceback
+            logger.debug(f"Full traceback: {traceback.format_exc()}")
             return None
 
     def simulate_audio_data(self, duration: float = 1.0) -> np.ndarray:
@@ -186,53 +248,66 @@ class HardwareDataCollector:
         """Collect data from audio hardware (use microphone for both audio and radio simulation)."""
         results = {}
 
-        # Always try to initialize audio if PyAudio is available
+        # Try to initialize audio with sounddevice first, then fallback to pyaudio
         audio_initialized = False
-        if PYAUDIO_AVAILABLE:
+        audio_source = "simulation"  # Default fallback
+
+        if SOUNDDEVICE_AVAILABLE:
+            try:
+                audio_initialized = self.initialize_audio()
+                if audio_initialized:
+                    audio_source = "sounddevice"
+                    logger.info("Audio system initialized with sounddevice")
+                else:
+                    logger.warning("Sounddevice initialization returned False")
+            except Exception as e:
+                logger.warning(f"Sounddevice initialization failed: {e}")
+
+        # Fallback to PyAudio if sounddevice failed
+        if not audio_initialized and PYAUDIO_AVAILABLE:
             try:
                 self.audio = pyaudio.PyAudio()
                 audio_initialized = True
-                logger.info("Audio system initialized for microphone input")
+                audio_source = "pyaudio"
+                logger.info("Audio system initialized with PyAudio (fallback)")
             except Exception as e:
-                logger.warning(f"Could not initialize audio system: {e}")
+                logger.warning(f"PyAudio initialization failed: {e}")
 
-        # Collect audio data (always try microphone first)
-        if audio_initialized and self.initialize_audio():
-            logger.info("Collecting audio data from microphone...")
+        # Collect audio data
+        if audio_initialized:
+            logger.info(f"Collecting audio data from microphone using {audio_source}...")
             audio_time_data = self.collect_audio_data(audio_duration)
-            if audio_time_data is not None:
+            if audio_time_data is not None and len(audio_time_data) > 0:
                 audio_freq_data = self.audio_to_frequency_domain(audio_time_data)
                 results['audio'] = audio_freq_data
-                logger.info(f"Collected {len(audio_freq_data)} audio frequency points from microphone")
+                logger.info(f"✓ Collected {len(audio_freq_data)} audio frequency points from microphone")
             else:
-                logger.warning("Microphone data collection failed, using simulation")
+                logger.warning("Microphone data collection failed or returned no data, using simulation")
                 audio_time_data = self.simulate_audio_data(audio_duration)
                 audio_freq_data = self.audio_to_frequency_domain(audio_time_data)
                 results['audio'] = audio_freq_data
-                logger.info(f"Simulated {len(audio_freq_data)} audio frequency points")
+                logger.info(f"⚠ Simulated {len(audio_freq_data)} audio frequency points")
         else:
-            logger.info("Microphone not available, simulating audio data...")
+            logger.info("Audio hardware not available, using simulation...")
             audio_time_data = self.simulate_audio_data(audio_duration)
             audio_freq_data = self.audio_to_frequency_domain(audio_time_data)
             results['audio'] = audio_freq_data
-            logger.info(f"Simulated {len(audio_freq_data)} audio frequency points")
+            logger.info(f"⚠ Simulated {len(audio_freq_data)} audio frequency points")
 
-        # Use microphone data to simulate radio characteristics
-        logger.info("Using microphone for radio frequency simulation...")
-        if 'audio' in results:
-            # Use the collected audio data and process it to simulate radio characteristics
+        # Use audio data to simulate radio characteristics
+        logger.info("Processing radio frequency simulation...")
+        if 'audio' in results and not results['audio'].empty:
             radio_freq_data = self.audio_to_radio_domain(results['audio'])
             results['radio'] = radio_freq_data
-            logger.info(f"Generated {len(radio_freq_data)} radio frequency points from microphone")
+            logger.info(f"✓ Generated {len(radio_freq_data)} radio frequency points from audio")
         else:
-            # No audio data available, simulate radio data
-            logger.info("No audio data available, simulating radio data...")
-            # Create simulated radio data based on audio simulation
+            # Fallback simulation
+            logger.info("No valid audio data available, simulating radio data...")
             radio_time_data = self.simulate_audio_data(audio_duration)
             radio_freq_data = self.audio_to_frequency_domain(radio_time_data)
             radio_freq_data = self.audio_to_radio_domain(radio_freq_data)
             results['radio'] = radio_freq_data
-            logger.info(f"Simulated {len(radio_freq_data)} radio frequency points")
+            logger.info(f"⚠ Simulated {len(radio_freq_data)} radio frequency points")
 
         return results
 
@@ -272,24 +347,52 @@ class HardwareDataCollector:
 
     def cleanup(self):
         """Clean up hardware resources."""
-        if self.audio:
-            self.audio.terminate()
+        # Sounddevice doesn't need explicit cleanup
+        # PyAudio cleanup
+        if hasattr(self, 'audio') and self.audio:
+            try:
+                self.audio.terminate()
+            except:
+                pass
 
     def list_audio_devices(self) -> List[Dict]:
         """List available audio input devices."""
         devices = []
-        if PYAUDIO_AVAILABLE and self.audio:
-            for i in range(self.audio.get_device_count()):
-                info = self.audio.get_device_info_by_index(i)
-                if info['maxInputChannels'] > 0:
-                    devices.append({
-                        'index': i,
-                        'name': info['name'],
-                        'channels': info['maxInputChannels'],
-                        'rate': info['defaultSampleRate']
-                    })
-        elif platform.system() == 'Darwin':  # macOS
-            # Try to list devices using system_profiler
+
+        # Try sounddevice first
+        if SOUNDDEVICE_AVAILABLE:
+            try:
+                device_list = sd.query_devices()
+                for i, device in enumerate(device_list):
+                    if device['max_input_channels'] > 0:
+                        devices.append({
+                            'index': i,
+                            'name': device['name'],
+                            'channels': device['max_input_channels'],
+                            'rate': device['default_samplerate']
+                        })
+            except Exception as e:
+                logger.warning(f"Failed to query sounddevice devices: {e}")
+
+        # Fallback to PyAudio
+        elif PYAUDIO_AVAILABLE:
+            try:
+                audio = pyaudio.PyAudio()
+                for i in range(audio.get_device_count()):
+                    info = audio.get_device_info_by_index(i)
+                    if info['maxInputChannels'] > 0:
+                        devices.append({
+                            'index': i,
+                            'name': info['name'],
+                            'channels': info['maxInputChannels'],
+                            'rate': info['defaultSampleRate']
+                        })
+                audio.terminate()
+            except Exception as e:
+                logger.warning(f"Failed to query PyAudio devices: {e}")
+
+        # macOS system profiler fallback
+        if not devices and platform.system() == 'Darwin':
             try:
                 result = subprocess.run(['system_profiler', 'SPAudioDataType'],
                                       capture_output=True, text=True, timeout=5)
@@ -302,6 +405,7 @@ class HardwareDataCollector:
                     })
             except:
                 pass
+
         return devices
 
 

@@ -1,0 +1,99 @@
+{
+  "leakage_points": [
+    {
+      "index": 395,
+      "frequency": 39504.14249424943,
+      "strength": 9.49842513861267,
+      "audio_amplitude": 0.06405832421782993,
+      "radio_amplitude": 9.496744217243231,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.352548482024509,
+      "frequency_range": "VHF High"
+    }
+  ],
+  "obscured_layers": [],
+  "frequency_correlations": {
+    "audio_radio": -0.05033922863526468,
+    "frequency_bands": {
+      "band_correlations": 1.0,
+      "band_ranges": [
+        [
+          0.2,
+          200000.16000000003
+        ],
+        [
+          200000.16000000003,
+          400000.12000000005
+        ],
+        [
+          400000.12000000005,
+          600000.0800000001
+        ],
+        [
+          600000.0800000001,
+          800000.04
+        ],
+        [
+          800000.04,
+          1000000.0
+        ]
+      ]
+    },
+    "spectral_features": {
+      "spectral_centroid": {
+        "spectral_centroid": NaN,
+        "spectral_bandwidth": NaN,
+        "spectral_rolloff": NaN
+      },
+      "spectral_bandwidth": {
+        "spectral_centroid": NaN,
+        "spectral_bandwidth": NaN,
+        "spectral_rolloff": NaN
+      },
+      "spectral_rolloff": {
+        "spectral_centroid": NaN,
+        "spectral_bandwidth": NaN,
+        "spectral_rolloff": NaN
+      }
+    },
+    "peak_analysis": {
+      "peak_count": 2624,
+      "avg_peak_frequency": 489492.2677815495,
+      "peak_frequency_std": 291309.3327829861,
+      "avg_peak_amplitude": 1.151788984778285,
+      "avg_peak_spacing": 381.0521349961912,
+      "peak_spacing_std": 201.74213588967535
+    }
+  },
+  "network_topology": {
+    "layer_count": 10,
+    "connectivity": 0.4748303856823677,
+    "dominant_frequencies": [
+      59106.09876987699,
+      39504.14249424943,
+      78608.04506450646,
+      59306.11873187319,
+      78408.02510251026
+    ],
+    "complexity_score": 0.75
+  },
+  "anomaly_score": 0.38354050268022283,
+  "metadata": {
+    "timestamp": "2025-10-15T12:09:27.336806",
+    "audio_samples": 110249,
+    "radio_samples": 110249,
+    "combined_samples": 10000,
+    "analysis_duration_seconds": 5.0,
+    "frequency_resolution_hz": 100.0
+  }
+}

@@ -1,0 +1,4866 @@
+{
+  "leakage_points": [
+    {
+      "index": 1,
+      "frequency": 101.00990099009901,
+      "strength": 12.875257271367374,
+      "audio_amplitude": 12.899730414893089,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.90306256574772,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 5,
+      "frequency": 501.0495049504951,
+      "strength": 10.72942229565044,
+      "audio_amplitude": 10.75007333746563,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.548699179607896,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 4,
+      "frequency": 401.03960396039605,
+      "strength": 10.678570586012379,
+      "audio_amplitude": 10.699131052173527,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.998198042743934,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 2,
+      "frequency": 201.01980198019803,
+      "strength": 10.167977857642175,
+      "audio_amplitude": 10.187628870204806,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.269620029327318,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 0,
+      "frequency": 1.0,
+      "strength": 10.035853167437441,
+      "audio_amplitude": 10.055268843168422,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.4425641556492375,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 7,
+      "frequency": 701.0693069306931,
+      "strength": 9.551934850702398,
+      "audio_amplitude": 9.570488584556635,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.165421849463582,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 14,
+      "frequency": 1401.1386138613861,
+      "strength": 9.323216207634072,
+      "audio_amplitude": 9.341362554188358,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.860046365794286,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 6,
+      "frequency": 601.059405940594,
+      "strength": 9.213913163576041,
+      "audio_amplitude": 9.231864822581477,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.924918799728192,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 48,
+      "frequency": 4801.475247524752,
+      "strength": 9.211210017194714,
+      "audio_amplitude": 9.229156861430829,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 12.94598227352572,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 8,
+      "frequency": 801.0792079207921,
+      "strength": 9.063213248255309,
+      "audio_amplitude": 9.08089648475359,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.957965917729725,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 12,
+      "frequency": 1201.118811881188,
+      "strength": 8.878577350869291,
+      "audio_amplitude": 8.895931719030905,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.385852241749493,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 3,
+      "frequency": 301.029702970297,
+      "strength": 8.778943158636713,
+      "audio_amplitude": 8.79612006114003,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.338052757736049,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 113,
+      "frequency": 11302.118811881188,
+      "strength": 8.71005354384902,
+      "audio_amplitude": 8.727107742082207,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.770313245495178,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 9,
+      "frequency": 901.0891089108911,
+      "strength": 8.577496069951486,
+      "audio_amplitude": 8.594314160490718,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.7817501231065975,
+      "frequency_range": "ELF/VLF"
+    },
+    {
+      "index": 19,
+      "frequency": 1901.1881188118812,
+      "strength": 8.565595759598041,
+      "audio_amplitude": 8.582392653634713,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.905258012779445,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 64,
+      "frequency": 6401.633663366337,
+      "strength": 8.50804489003882,
+      "audio_amplitude": 8.524739276063704,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.969991171909191,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 82,
+      "frequency": 8201.81188118812,
+      "strength": 8.336195578354857,
+      "audio_amplitude": 8.352583871154692,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.743518584269198,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 13,
+      "frequency": 1301.1287128712872,
+      "strength": 8.281879862347532,
+      "audio_amplitude": 8.298171409501307,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.227945431406998,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 45,
+      "frequency": 4501.445544554455,
+      "strength": 8.249400928155378,
+      "audio_amplitude": 8.265634624732881,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.882909797765146,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 71,
+      "frequency": 7101.70297029703,
+      "strength": 8.24028602904051,
+      "audio_amplitude": 8.256503490412653,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.920650889621532,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 68,
+      "frequency": 6801.6732673267325,
+      "strength": 8.21705369618261,
+      "audio_amplitude": 8.233229776768178,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.401169682852332,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 26,
+      "frequency": 2601.2574257425745,
+      "strength": 8.180317430556839,
+      "audio_amplitude": 8.196428077525528,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 12.58203263403614,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 50,
+      "frequency": 5001.495049504951,
+      "strength": 8.146505667710198,
+      "audio_amplitude": 8.1625560901052,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 12.266606817909823,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 51,
+      "frequency": 5101.504950495049,
+      "strength": 8.093313616533134,
+      "audio_amplitude": 8.109269294722692,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 12.752079205822955,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 18,
+      "frequency": 1801.1782178217823,
+      "strength": 8.085726607616502,
+      "audio_amplitude": 8.101668772036323,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.655311230649039,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 52,
+      "frequency": 5201.514851485149,
+      "strength": 8.083915263405025,
+      "audio_amplitude": 8.099854201508801,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 13.540947968642447,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 36,
+      "frequency": 3601.3564356435645,
+      "strength": 8.050963172721103,
+      "audio_amplitude": 8.066843417475393,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 12.303200338291358,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 100,
+      "frequency": 10001.990099009901,
+      "strength": 8.036770531830088,
+      "audio_amplitude": 8.052625497046279,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.226237321101555,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 49,
+      "frequency": 4901.485148514852,
+      "strength": 7.983432781968754,
+      "audio_amplitude": 7.999192743465047,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.277849648901,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 10,
+      "frequency": 1001.0990099009902,
+      "strength": 7.951539008576371,
+      "audio_amplitude": 7.967242161768569,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.20623043776811,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 38,
+      "frequency": 3801.3762376237623,
+      "strength": 7.946541248273856,
+      "audio_amplitude": 7.962235499594094,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.84873194158168,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 42,
+      "frequency": 4201.415841584158,
+      "strength": 7.944323696048182,
+      "audio_amplitude": 7.960013997525933,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.274592371852941,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 69,
+      "frequency": 6901.683168316832,
+      "strength": 7.913932132943497,
+      "audio_amplitude": 7.929568301812431,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.416980658194072,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 61,
+      "frequency": 6101.60396039604,
+      "strength": 7.901436791928745,
+      "audio_amplitude": 7.917050704443017,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.591299198513777,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 23,
+      "frequency": 2301.2277227722775,
+      "strength": 7.88307195517138,
+      "audio_amplitude": 7.898653156748055,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.449024424347217,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 53,
+      "frequency": 5301.524752475248,
+      "strength": 7.882480806083952,
+      "audio_amplitude": 7.898060954722276,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 13.214022858193301,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 102,
+      "frequency": 10202.009900990099,
+      "strength": 7.872717858819357,
+      "audio_amplitude": 7.8882806179669425,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.089752204968642,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 56,
+      "frequency": 5601.554455445545,
+      "strength": 7.853891811129615,
+      "audio_amplitude": 7.869421037843489,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 12.454284312476371,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 30,
+      "frequency": 3001.2970297029706,
+      "strength": 7.8354943417948695,
+      "audio_amplitude": 7.850990799446906,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 12.985634032148432,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 46,
+      "frequency": 4601.455445544555,
+      "strength": 7.818969494589972,
+      "audio_amplitude": 7.834436518642741,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.294876039309244,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 54,
+      "frequency": 5401.534653465346,
+      "strength": 7.815833805941572,
+      "audio_amplitude": 7.831295244792738,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 12.636932969810141,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 22,
+      "frequency": 2201.2178217821784,
+      "strength": 7.806108870975433,
+      "audio_amplitude": 7.821552988042311,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.642106570270368,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 104,
+      "frequency": 10402.029702970298,
+      "strength": 7.7569976702912,
+      "audio_amplitude": 7.772354311850283,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.885749582036683,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 47,
+      "frequency": 4701.465346534654,
+      "strength": 7.709374491438576,
+      "audio_amplitude": 7.724646307913059,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.206813922863509,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 21,
+      "frequency": 2101.207920792079,
+      "strength": 7.702305951931108,
+      "audio_amplitude": 7.717565178119178,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.111239996241666,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 143,
+      "frequency": 14302.41584158416,
+      "strength": 7.693584006565299,
+      "audio_amplitude": 7.708827697466322,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.9743224931752765,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 141,
+      "frequency": 14102.39603960396,
+      "strength": 7.69266243721945,
+      "audio_amplitude": 7.707904486646728,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.204495665514953,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 59,
+      "frequency": 5901.584158415842,
+      "strength": 7.660232843835818,
+      "audio_amplitude": 7.675417130571303,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.709510425454864,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 28,
+      "frequency": 2801.2772277227723,
+      "strength": 7.657747952211765,
+      "audio_amplitude": 7.672927812927246,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.851877525587122,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 44,
+      "frequency": 4401.435643564357,
+      "strength": 7.621360236606525,
+      "audio_amplitude": 7.63647528453275,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.417926386232788,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 17,
+      "frequency": 1701.1683168316831,
+      "strength": 7.620157617272554,
+      "audio_amplitude": 7.635270523126596,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.275204204317841,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 72,
+      "frequency": 7201.712871287129,
+      "strength": 7.605592485724333,
+      "audio_amplitude": 7.620679448570252,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.75241601593159,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 29,
+      "frequency": 2901.2871287128714,
+      "strength": 7.553856762145201,
+      "audio_amplitude": 7.568851574755978,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.524416692118685,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 33,
+      "frequency": 3301.3267326732675,
+      "strength": 7.550837114196679,
+      "audio_amplitude": 7.5658265482943285,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.98140834855748,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 184,
+      "frequency": 18402.82178217822,
+      "strength": 7.529059124798744,
+      "audio_amplitude": 7.5440097685460294,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.10576390077357,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 63,
+      "frequency": 6301.623762376238,
+      "strength": 7.528740681913721,
+      "audio_amplitude": 7.543690758459378,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.476110372437471,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 43,
+      "frequency": 4301.425742574257,
+      "strength": 7.491592306978496,
+      "audio_amplitude": 7.506476215869607,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.259036657451238,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 11,
+      "frequency": 1101.1089108910892,
+      "strength": 7.490398453844351,
+      "audio_amplitude": 7.50528023627739,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.921724155659134,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 106,
+      "frequency": 10602.049504950495,
+      "strength": 7.485144434945856,
+      "audio_amplitude": 7.500016859066235,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.779406328343692,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 60,
+      "frequency": 6001.594059405941,
+      "strength": 7.483698410547273,
+      "audio_amplitude": 7.498568259049121,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.093028870660753,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 57,
+      "frequency": 5701.564356435643,
+      "strength": 7.467471818598261,
+      "audio_amplitude": 7.482312764744827,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.204972481897377,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 81,
+      "frequency": 8101.80198019802,
+      "strength": 7.456009161566765,
+      "audio_amplitude": 7.470829690746723,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.663447180564404,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 154,
+      "frequency": 15402.524752475249,
+      "strength": 7.452247120435526,
+      "audio_amplitude": 7.46706094877222,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.53432803821623,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 80,
+      "frequency": 8001.792079207921,
+      "strength": 7.445906462976376,
+      "audio_amplitude": 7.46070899750996,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.32542265695916,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 74,
+      "frequency": 7401.732673267327,
+      "strength": 7.433794424642036,
+      "audio_amplitude": 7.448575385549056,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.349184162586143,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 73,
+      "frequency": 7301.722772277228,
+      "strength": 7.424326386560621,
+      "audio_amplitude": 7.439090483260954,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.713909721311357,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 168,
+      "frequency": 16802.663366336634,
+      "strength": 7.412436466099982,
+      "audio_amplitude": 7.427179384803944,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.988087726955815,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 66,
+      "frequency": 6601.653465346535,
+      "strength": 7.395379304585842,
+      "audio_amplitude": 7.410091841547061,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.983326553797497,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 120,
+      "frequency": 12002.188118811882,
+      "strength": 7.37078291606175,
+      "audio_amplitude": 7.385451642618294,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.275486429344385,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 35,
+      "frequency": 3501.3465346534654,
+      "strength": 7.354152059833166,
+      "audio_amplitude": 7.368791163970112,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.26416022127926,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 31,
+      "frequency": 3101.3069306930693,
+      "strength": 7.3364453921904556,
+      "audio_amplitude": 7.351052957702367,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.66014779186532,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 137,
+      "frequency": 13702.356435643565,
+      "strength": 7.329480888816014,
+      "audio_amplitude": 7.344076049347785,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.097917023075406,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 151,
+      "frequency": 15102.49504950495,
+      "strength": 7.226584287235567,
+      "audio_amplitude": 7.240996171196046,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.490569774289014,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 145,
+      "frequency": 14502.435643564357,
+      "strength": 7.188442074251289,
+      "audio_amplitude": 7.202786020360469,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.670351793133729,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 175,
+      "frequency": 17502.73267326733,
+      "strength": 7.142835758558563,
+      "audio_amplitude": 7.157098471963835,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.707694338357692,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 108,
+      "frequency": 10802.069306930693,
+      "strength": 7.133772222212556,
+      "audio_amplitude": 7.148018791898407,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.975426951251191,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 146,
+      "frequency": 14602.445544554455,
+      "strength": 7.112127133778066,
+      "audio_amplitude": 7.126335149833061,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.532768938671144,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 55,
+      "frequency": 5501.544554455446,
+      "strength": 7.0929042129188264,
+      "audio_amplitude": 7.107077989640635,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.118021820401227,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 85,
+      "frequency": 8501.841584158416,
+      "strength": 7.085161667419731,
+      "audio_amplitude": 7.099321653334357,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.840207358801623,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 164,
+      "frequency": 16402.62376237624,
+      "strength": 7.081361710888271,
+      "audio_amplitude": 7.095514928425774,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.764671193848628,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 15,
+      "frequency": 1501.1485148514853,
+      "strength": 7.051402842607113,
+      "audio_amplitude": 7.06550269823981,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.450261292768008,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 65,
+      "frequency": 6501.6435643564355,
+      "strength": 7.036695873615423,
+      "audio_amplitude": 7.050769533603079,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.688593629668945,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 156,
+      "frequency": 15602.544554455446,
+      "strength": 7.021968785239638,
+      "audio_amplitude": 7.036016213746166,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.259991554143202,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 79,
+      "frequency": 7901.782178217822,
+      "strength": 7.00754394335802,
+      "audio_amplitude": 7.021565678736486,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.794279831507552,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 115,
+      "frequency": 11502.138613861387,
+      "strength": 6.998663445023791,
+      "audio_amplitude": 7.012669362705063,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.199596322525291,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 125,
+      "frequency": 12502.237623762376,
+      "strength": 6.978408122408871,
+      "audio_amplitude": 6.9923779618715995,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.547967885033017,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 98,
+      "frequency": 9801.970297029704,
+      "strength": 6.965210032380292,
+      "audio_amplitude": 6.979156363771316,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.287865182259127,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 152,
+      "frequency": 15202.50495049505,
+      "strength": 6.936631078839756,
+      "audio_amplitude": 6.950526506191817,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.473579348402916,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 24,
+      "frequency": 2401.237623762376,
+      "strength": 6.910506632686675,
+      "audio_amplitude": 6.924355527900217,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.995894865954698,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 97,
+      "frequency": 9701.960396039603,
+      "strength": 6.855161966970901,
+      "audio_amplitude": 6.868912283801719,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.200211919002184,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 25,
+      "frequency": 2501.2475247524753,
+      "strength": 6.855066711104953,
+      "audio_amplitude": 6.868816858268665,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.767703425250568,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 91,
+      "frequency": 9101.90099009901,
+      "strength": 6.850307043007473,
+      "audio_amplitude": 6.864048712382454,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.890464085441587,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 139,
+      "frequency": 13902.376237623763,
+      "strength": 6.850071329445623,
+      "audio_amplitude": 6.863812578974148,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.724445535391586,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 99,
+      "frequency": 9901.980198019803,
+      "strength": 6.840769447471337,
+      "audio_amplitude": 6.854494128745823,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.86063793454222,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 128,
+      "frequency": 12802.267326732674,
+      "strength": 6.812134756011675,
+      "audio_amplitude": 6.825808433968363,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.323290558244922,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 40,
+      "frequency": 4001.3960396039606,
+      "strength": 6.788437046947228,
+      "audio_amplitude": 6.802068515202157,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.982949559510233,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 147,
+      "frequency": 14702.455445544554,
+      "strength": 6.74415888076671,
+      "audio_amplitude": 6.757711481980784,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.361718552779069,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 20,
+      "frequency": 2001.1980198019803,
+      "strength": 6.7078211769662195,
+      "audio_amplitude": 6.7213090544706775,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.814932981994286,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 77,
+      "frequency": 7701.762376237624,
+      "strength": 6.697380717694836,
+      "audio_amplitude": 6.710849998942968,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.811491409193485,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 150,
+      "frequency": 15002.485148514852,
+      "strength": 6.696219667806633,
+      "audio_amplitude": 6.709686881024925,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.854359531276871,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 126,
+      "frequency": 12602.247524752476,
+      "strength": 6.675262527891469,
+      "audio_amplitude": 6.688692412833717,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.465212779300501,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 165,
+      "frequency": 16502.633663366338,
+      "strength": 6.663425775758054,
+      "audio_amplitude": 6.676834577405879,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.526954242195508,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 62,
+      "frequency": 6201.6138613861385,
+      "strength": 6.65943293634913,
+      "audio_amplitude": 6.672834626062203,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.082448125592927,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 142,
+      "frequency": 14202.40594059406,
+      "strength": 6.652937187543966,
+      "audio_amplitude": 6.666327307209528,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.104351091054139,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 163,
+      "frequency": 16302.613861386139,
+      "strength": 6.645620492208763,
+      "audio_amplitude": 6.658997579579637,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.20748182063983,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 166,
+      "frequency": 16602.643564356436,
+      "strength": 6.639815230506725,
+      "audio_amplitude": 6.653181977706556,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 11.430338604146888,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 76,
+      "frequency": 7601.752475247525,
+      "strength": 6.6335399795791625,
+      "audio_amplitude": 6.6468955494761826,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.911243563071484,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 135,
+      "frequency": 13502.336633663366,
+      "strength": 6.623873530279404,
+      "audio_amplitude": 6.637211882565181,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.630588517050861,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 89,
+      "frequency": 8901.881188118812,
+      "strength": 6.6187240597292485,
+      "audio_amplitude": 6.632053239920983,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.14438380521741,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 93,
+      "frequency": 9301.920792079209,
+      "strength": 6.607569611803308,
+      "audio_amplitude": 6.620878924001939,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.329850069650838,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 27,
+      "frequency": 2701.267326732673,
+      "strength": 6.599351752612668,
+      "audio_amplitude": 6.612646427388559,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.363419164004757,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 169,
+      "frequency": 16902.673267326732,
+      "strength": 6.58959434882007,
+      "audio_amplitude": 6.602871643979099,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.563259775445731,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 159,
+      "frequency": 15902.574257425744,
+      "strength": 6.575253488862777,
+      "audio_amplitude": 6.588505240480018,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 12.176160816639737,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 75,
+      "frequency": 7501.742574257426,
+      "strength": 6.562047877023672,
+      "audio_amplitude": 6.575276107171569,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.899792380802472,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 39,
+      "frequency": 3901.3861386138615,
+      "strength": 6.532611508685151,
+      "audio_amplitude": 6.545787307590641,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.81959224378066,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 86,
+      "frequency": 8601.851485148514,
+      "strength": 6.516766249626324,
+      "audio_amplitude": 6.529913825396093,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.08260676479204,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 114,
+      "frequency": 11402.128712871287,
+      "strength": 6.502712376386863,
+      "audio_amplitude": 6.515834919787622,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.251244021981651,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 186,
+      "frequency": 18602.841584158417,
+      "strength": 6.502233770930933,
+      "audio_amplitude": 6.515355461852935,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.215894201943534,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 180,
+      "frequency": 18002.78217821782,
+      "strength": 6.493514688753395,
+      "audio_amplitude": 6.506620849488183,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.913029818613174,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 37,
+      "frequency": 3701.3663366336636,
+      "strength": 6.474329470340042,
+      "audio_amplitude": 6.487401458896192,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.247286792611728,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 34,
+      "frequency": 3401.3366336633662,
+      "strength": 6.467686927376795,
+      "audio_amplitude": 6.480747084419755,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.441756908949573,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 32,
+      "frequency": 3201.3168316831684,
+      "strength": 6.389694921186088,
+      "audio_amplitude": 6.402616161031946,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.982499342447147,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 170,
+      "frequency": 17002.68316831683,
+      "strength": 6.380088044083933,
+      "audio_amplitude": 6.392992172426893,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.258009508932442,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 185,
+      "frequency": 18502.83168316832,
+      "strength": 6.372023026379443,
+      "audio_amplitude": 6.384912789536678,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.539857930481718,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 167,
+      "frequency": 16702.653465346535,
+      "strength": 6.365361250665538,
+      "audio_amplitude": 6.37823914805274,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.505785578665492,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 157,
+      "frequency": 15702.554455445545,
+      "strength": 6.346785430068387,
+      "audio_amplitude": 6.35963024071943,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.49559637323452,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 105,
+      "frequency": 10502.039603960397,
+      "strength": 6.327882273557686,
+      "audio_amplitude": 6.340693414430926,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.4473458186142905,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 110,
+      "frequency": 11002.089108910892,
+      "strength": 6.325557112743831,
+      "audio_amplitude": 6.338364112105155,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.958315768615533,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 189,
+      "frequency": 18902.871287128713,
+      "strength": 6.323717355487403,
+      "audio_amplitude": 6.336521077924156,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.883203105827415,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 160,
+      "frequency": 16002.584158415842,
+      "strength": 6.3202016275342965,
+      "audio_amplitude": 6.332999087853983,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 14.46566490259182,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 161,
+      "frequency": 16102.594059405941,
+      "strength": 6.311973205164273,
+      "audio_amplitude": 6.324756009246378,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 10.623963355340031,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 16,
+      "frequency": 1601.1584158415842,
+      "strength": 6.304904938928257,
+      "audio_amplitude": 6.317675153210691,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.88023602679346,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 107,
+      "frequency": 10702.059405940594,
+      "strength": 6.299421406536097,
+      "audio_amplitude": 6.312181853702805,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.269893321455781,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 41,
+      "frequency": 4101.40594059406,
+      "strength": 6.288307431726247,
+      "audio_amplitude": 6.3010480829894435,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.233705551637525,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 119,
+      "frequency": 11902.178217821782,
+      "strength": 6.27763050560225,
+      "audio_amplitude": 6.290352139420926,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.2461129669136515,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 153,
+      "frequency": 15302.514851485148,
+      "strength": 6.259015935387145,
+      "audio_amplitude": 6.271704413449919,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.646708228093614,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 155,
+      "frequency": 15502.534653465347,
+      "strength": 6.2487925389630945,
+      "audio_amplitude": 6.261462807395864,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.906425635941218,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 88,
+      "frequency": 8801.871287128713,
+      "strength": 6.23657986374623,
+      "audio_amplitude": 6.2492283793008125,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.638229927528039,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 58,
+      "frequency": 5801.574257425743,
+      "strength": 6.218430426169879,
+      "audio_amplitude": 6.231046614449908,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.362089977326844,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 140,
+      "frequency": 14002.386138613861,
+      "strength": 6.218245166933957,
+      "audio_amplitude": 6.2308610252353755,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.255093688817918,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 95,
+      "frequency": 9501.940594059406,
+      "strength": 6.131716350188127,
+      "audio_amplitude": 6.144178085762386,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.51569865107102,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 111,
+      "frequency": 11102.09900990099,
+      "strength": 6.129467388662456,
+      "audio_amplitude": 6.141925118448855,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.04400468164944,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 176,
+      "frequency": 17602.742574257427,
+      "strength": 6.091009841651953,
+      "audio_amplitude": 6.103399071922837,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.33217574667623,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 183,
+      "frequency": 18302.811881188118,
+      "strength": 6.085745326271529,
+      "audio_amplitude": 6.098125179533711,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.816561340015955,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 87,
+      "frequency": 8701.861386138615,
+      "strength": 6.085197540831773,
+      "audio_amplitude": 6.097576418393731,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.50931668499911,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 103,
+      "frequency": 10302.0198019802,
+      "strength": 6.0710971646491805,
+      "audio_amplitude": 6.083450927012376,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.9606734880992835,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 188,
+      "frequency": 18802.861386138615,
+      "strength": 6.070447732288612,
+      "audio_amplitude": 6.082800337900909,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.6555965683406635,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 192,
+      "frequency": 19202.90099009901,
+      "strength": 6.065036953718476,
+      "audio_amplitude": 6.077379921802136,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.74458953834032,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 116,
+      "frequency": 11602.148514851486,
+      "strength": 6.055169907584648,
+      "audio_amplitude": 6.067495300759551,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.074654296795184,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 96,
+      "frequency": 9601.950495049505,
+      "strength": 6.045968129334633,
+      "audio_amplitude": 6.058277132557472,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.244724338622146,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 122,
+      "frequency": 12202.20792079208,
+      "strength": 6.0317014179261115,
+      "audio_amplitude": 6.0439850096785,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.277117695727519,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 123,
+      "frequency": 12302.217821782178,
+      "strength": 6.023886004136205,
+      "audio_amplitude": 6.036155675290433,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.252788160547554,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 173,
+      "frequency": 17302.71287128713,
+      "strength": 5.989891458434782,
+      "audio_amplitude": 6.002100579447576,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.475537108065954,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 78,
+      "frequency": 7801.772277227723,
+      "strength": 5.983848930769352,
+      "audio_amplitude": 5.996047288999552,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.085076508075619,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 67,
+      "frequency": 6701.663366336634,
+      "strength": 5.980504945912091,
+      "audio_amplitude": 5.992697347929261,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.06334130051601,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 158,
+      "frequency": 15802.564356435643,
+      "strength": 5.970822011227618,
+      "audio_amplitude": 5.982997166270235,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.538921477129376,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 84,
+      "frequency": 8401.831683168317,
+      "strength": 5.928836514533502,
+      "audio_amplitude": 5.940936886174531,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.191977731764607,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 174,
+      "frequency": 17402.72277227723,
+      "strength": 5.918984993660237,
+      "audio_amplitude": 5.931067818045672,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.765967466905124,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 70,
+      "frequency": 7001.693069306931,
+      "strength": 5.889091048515876,
+      "audio_amplitude": 5.901120626635795,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.799854731526285,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 112,
+      "frequency": 11202.10891089109,
+      "strength": 5.872472228106617,
+      "audio_amplitude": 5.884472205244806,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.862412250174077,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 162,
+      "frequency": 16202.60396039604,
+      "strength": 5.8639661476743,
+      "audio_amplitude": 5.875950974018071,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 9.850938757316896,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 121,
+      "frequency": 12102.198019801981,
+      "strength": 5.790518994221847,
+      "audio_amplitude": 5.802372998534091,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.009123592476934,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 179,
+      "frequency": 17902.772277227723,
+      "strength": 5.789424381530309,
+      "audio_amplitude": 5.801276436148804,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.76327405987722,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 94,
+      "frequency": 9401.930693069307,
+      "strength": 5.769187963501908,
+      "audio_amplitude": 5.781003973574184,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.994807247011849,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 187,
+      "frequency": 18702.851485148516,
+      "strength": 5.76201328305304,
+      "audio_amplitude": 5.773816513783602,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.870860100136398,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 117,
+      "frequency": 11702.158415841584,
+      "strength": 5.7566638604478815,
+      "audio_amplitude": 5.768457562935349,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.655549290229856,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 172,
+      "frequency": 17202.70297029703,
+      "strength": 5.739624136472913,
+      "audio_amplitude": 5.751387488276898,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.091947676205216,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 90,
+      "frequency": 9001.89108910891,
+      "strength": 5.737765817673598,
+      "audio_amplitude": 5.749525859491707,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.570587256523654,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 178,
+      "frequency": 17802.762376237624,
+      "strength": 5.720277707788575,
+      "audio_amplitude": 5.732006600270663,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.9017334316661465,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 118,
+      "frequency": 11802.168316831683,
+      "strength": 5.688992470337523,
+      "audio_amplitude": 5.700665638422848,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.51831023400552,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 101,
+      "frequency": 10102.0,
+      "strength": 5.678730377292736,
+      "audio_amplitude": 5.690385266822709,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.620747309454834,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 190,
+      "frequency": 19002.881188118812,
+      "strength": 5.5837201841497395,
+      "audio_amplitude": 5.595205844160277,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.324283243507449,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 83,
+      "frequency": 8301.821782178218,
+      "strength": 5.5799523972160685,
+      "audio_amplitude": 5.591431346149077,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.74457227415016,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 129,
+      "frequency": 12902.277227722772,
+      "strength": 5.535213706848986,
+      "audio_amplitude": 5.546612968468239,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.2362719921192795,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 134,
+      "frequency": 13402.326732673268,
+      "strength": 5.519510084279257,
+      "audio_amplitude": 5.530881375041773,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.881346027246621,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 196,
+      "frequency": 19602.940594059408,
+      "strength": 5.4891572510594715,
+      "audio_amplitude": 5.500474478197766,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.7437224475419395,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 109,
+      "frequency": 10902.079207920793,
+      "strength": 5.488984381140503,
+      "audio_amplitude": 5.5003013003676955,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.1290186633065415,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 136,
+      "frequency": 13602.346534653465,
+      "strength": 5.486192223663186,
+      "audio_amplitude": 5.497504169576963,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.8209787347889987,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 191,
+      "frequency": 19102.89108910891,
+      "strength": 5.4435920591231435,
+      "audio_amplitude": 5.4548281268060235,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.303526619574034,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 177,
+      "frequency": 17702.752475247526,
+      "strength": 5.298374032004243,
+      "audio_amplitude": 5.309351441367107,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.294010495251716,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 193,
+      "frequency": 19302.91089108911,
+      "strength": 5.277682170508196,
+      "audio_amplitude": 5.288622724101575,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.103140440314829,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 133,
+      "frequency": 13302.316831683169,
+      "strength": 5.248209464929908,
+      "audio_amplitude": 5.259097522557997,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.726450664531125,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 182,
+      "frequency": 18202.80198019802,
+      "strength": 5.186571076001056,
+      "audio_amplitude": 5.197349345041286,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 8.62228968992094,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 138,
+      "frequency": 13802.366336633664,
+      "strength": 5.163478578504675,
+      "audio_amplitude": 5.174215715829196,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.5412795479998707,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 149,
+      "frequency": 14902.475247524753,
+      "strength": 5.155501359839368,
+      "audio_amplitude": 5.166224288363375,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 6.035740319603821,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 195,
+      "frequency": 19502.93069306931,
+      "strength": 5.05941069900364,
+      "audio_amplitude": 5.069962473509141,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.4243781146419296,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 127,
+      "frequency": 12702.257425742575,
+      "strength": 5.058556621233723,
+      "audio_amplitude": 5.0691068744796,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.9670689682744427,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 130,
+      "frequency": 13002.287128712871,
+      "strength": 5.0396681083715436,
+      "audio_amplitude": 5.050184717922479,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.8607252826313414,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 181,
+      "frequency": 18102.79207920792,
+      "strength": 5.030836512288869,
+      "audio_amplitude": 5.041337391245944,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.634125813174068,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 144,
+      "frequency": 14402.425742574258,
+      "strength": 4.895192149191824,
+      "audio_amplitude": 4.905451422173564,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.101593630608811,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 171,
+      "frequency": 17102.69306930693,
+      "strength": 4.768845192423184,
+      "audio_amplitude": 4.778879419711732,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 7.055816877266791,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 124,
+      "frequency": 12402.227722772277,
+      "strength": 4.674012745910321,
+      "audio_amplitude": 4.683878060276799,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.7285826476120194,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 148,
+      "frequency": 14802.465346534655,
+      "strength": 4.523782959018972,
+      "audio_amplitude": 4.533380688258006,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 4.994648271095107,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 92,
+      "frequency": 9201.91089108911,
+      "strength": 4.5123713317856415,
+      "audio_amplitude": 4.521948734950928,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5.0353150682092105,
+      "frequency_range": "Audio"
+    },
+    {
+      "index": 220,
+      "frequency": 22003.178217821784,
+      "strength": 4.171626708418528,
+      "audio_amplitude": -0.14241552770505483,
+      "radio_amplitude": 68.36733966053926,
+      "detection_methods": [
+        "statistical",
+        "statistical",
+        "statistical",
+        "statistical",
+        "legacy",
+        "frequency_domain",
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 3.5677449619254546,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 236,
+      "frequency": 23603.336633663366,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 73.81177009210643,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 237,
+      "frequency": 23703.346534653465,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 238,
+      "frequency": 23803.356435643564,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 239,
+      "frequency": 23903.366336633662,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 250,
+      "frequency": 25003.47524752475,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 266,
+      "frequency": 26603.633663366338,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 240,
+      "frequency": 24003.376237623765,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 241,
+      "frequency": 24103.386138613863,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 242,
+      "frequency": 24203.396039603962,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 243,
+      "frequency": 24303.40594059406,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 244,
+      "frequency": 24403.41584158416,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 245,
+      "frequency": 24503.425742574258,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 246,
+      "frequency": 24603.435643564357,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 247,
+      "frequency": 24703.445544554455,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 248,
+      "frequency": 24803.455445544554,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 249,
+      "frequency": 24903.465346534653,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 251,
+      "frequency": 25103.485148514854,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 252,
+      "frequency": 25203.495049504952,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 253,
+      "frequency": 25303.50495049505,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 254,
+      "frequency": 25403.51485148515,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 255,
+      "frequency": 25503.52475247525,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 256,
+      "frequency": 25603.534653465347,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 257,
+      "frequency": 25703.544554455446,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 258,
+      "frequency": 25803.554455445545,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 259,
+      "frequency": 25903.564356435643,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 260,
+      "frequency": 26003.574257425742,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 261,
+      "frequency": 26103.58415841584,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 262,
+      "frequency": 26203.594059405943,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 263,
+      "frequency": 26303.60396039604,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 264,
+      "frequency": 26403.61386138614,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 265,
+      "frequency": 26503.62376237624,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 267,
+      "frequency": 26703.643564356436,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 268,
+      "frequency": 26803.653465346535,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 269,
+      "frequency": 26903.663366336634,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 271,
+      "frequency": 27103.68316831683,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 274,
+      "frequency": 27403.71287128713,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 275,
+      "frequency": 27503.72277227723,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 1.0,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 282,
+      "frequency": 28203.79207920792,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation"
+      ],
+      "confidence_score": 0.7200000000000001,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 298,
+      "frequency": 29803.950495049507,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation"
+      ],
+      "confidence_score": 0.7200000000000001,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 314,
+      "frequency": 31404.10891089109,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "correlation"
+      ],
+      "confidence_score": 0.7200000000000001,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF High"
+    },
+    {
+      "index": 270,
+      "frequency": 27003.673267326732,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 0.6,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 272,
+      "frequency": 27203.69306930693,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 0.6,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    },
+    {
+      "index": 273,
+      "frequency": 27303.702970297032,
+      "strength": 0.14356756148369607,
+      "audio_amplitude": -0.14228318746997526,
+      "radio_amplitude": -0.024364849917048712,
+      "detection_methods": [
+        "correlation",
+        "signal_noise"
+      ],
+      "confidence_score": 0.6,
+      "snr_ratio": 5047908055132846.0,
+      "frequency_range": "VHF Low"
+    }
+  ],
+  "obscured_layers": [],
+  "frequency_correlations": {
+    "audio_radio": -0.003400885380612685,
+    "frequency_bands": {
+      "band_correlations": 1.0,
+      "band_ranges": [
+        [
+          1.0,
+          200000.8
+        ],
+        [
+          200000.8,
+          400000.6
+        ],
+        [
+          400000.6,
+          600000.3999999999
+        ],
+        [
+          600000.3999999999,
+          800000.2
+        ],
+        [
+          800000.2,
+          1000000.0
+        ]
+      ]
+    },
+    "spectral_features": {
+      "spectral_centroid": {
+        "spectral_centroid": NaN,
+        "spectral_bandwidth": NaN,
+        "spectral_rolloff": NaN
+      },
+      "spectral_bandwidth": {
+        "spectral_centroid": NaN,
+        "spectral_bandwidth": NaN,
+        "spectral_rolloff": NaN
+      },
+      "spectral_rolloff": {
+        "spectral_centroid": NaN,
+        "spectral_bandwidth": NaN,
+        "spectral_rolloff": NaN
+      }
+    },
+    "peak_analysis": {
+      "peak_count": 74,
+      "avg_peak_frequency": 11045.336633663366,
+      "peak_frequency_std": 6451.508474212111,
+      "avg_peak_amplitude": 7.0081680017886425,
+      "avg_peak_spacing": 306.87969618879697,
+      "peak_spacing_std": 131.73375816190097
+    }
+  },
+  "network_topology": {
+    "layer_count": 10,
+    "connectivity": 0.49829955730969366,
+    "dominant_frequencies": [
+      101.00990099009901,
+      501.0495049504951,
+      701.0693069306931,
+      1401.1386138613861,
+      4801.475247524752
+    ],
+    "complexity_score": 0.5925
+  },
+  "anomaly_score": 0.40001567349275946,
+  "metadata": {
+    "timestamp": "2025-10-15T12:07:01.532545",
+    "audio_samples": 22049,
+    "radio_samples": 22049,
+    "combined_samples": 10000,
+    "analysis_duration_seconds": 1.0,
+    "frequency_resolution_hz": 100.0
+  }
+}

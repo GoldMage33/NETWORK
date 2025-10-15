@@ -20,35 +20,72 @@ class LayerDetector:
         self.isolation_forest = IsolationForest(contamination=0.1, random_state=42)
         self.scaler = StandardScaler()
         
+    def _validate_and_clean_data(self, data: pd.DataFrame) -> pd.DataFrame:
+        """Validate and clean data before processing to prevent sklearn errors."""
+        if data.empty:
+            return data
+            
+        # Remove NaN and infinite values
+        data = data.replace([np.inf, -np.inf], np.nan)
+        data = data.dropna()
+        
+        if data.empty:
+            return data
+            
+        # Ensure numeric columns are finite
+        numeric_cols = data.select_dtypes(include=[np.number]).columns
+        for col in numeric_cols:
+            # Remove non-finite values
+            data = data[np.isfinite(data[col])]
+            
+            # Ensure minimum variance (avoid all-same values)
+            if data[col].std() == 0 and len(data) > 1:
+                # Add small noise to prevent division by zero
+                noise = np.random.normal(0, 1e-8, len(data))
+                data[col] = data[col] + noise
+                
+        return data
+        
     def detect_leakage(self, data: pd.DataFrame) -> List[Dict]:
         """
         Detect frequency leakage points that indicate network layer issues.
-        
+
+        Enhanced criteria:
+        - Multi-threshold statistical detection
+        - Frequency-specific thresholds
+        - Temporal consistency requirements
+        - Signal-to-noise ratio validation
+        - Cross-method validation
+
         Args:
             data (pd.DataFrame): Processed frequency data
-            
+
         Returns:
             List[Dict]: Detected leakage points with metadata
         """
         leakage_points = []
-        
-        # Method 1: Statistical outlier detection
-        outliers_statistical = self._detect_statistical_outliers(data)
-        
-        # Method 2: Isolation Forest for anomaly detection
+
+        # Enhanced detection methods with refined criteria
+        outliers_statistical = self._detect_enhanced_statistical_outliers(data)
         outliers_isolation = self._detect_isolation_outliers(data)
-        
-        # Method 3: Frequency domain analysis
-        outliers_frequency = self._detect_frequency_anomalies(data)
-        
-        # Method 4: Cross-correlation analysis
-        outliers_correlation = self._detect_correlation_anomalies(data)
-        
-        # Combine all methods
-        all_outliers = set(outliers_statistical + outliers_isolation + 
-                          outliers_frequency + outliers_correlation)
-        
-        for idx in all_outliers:
+        outliers_frequency = self._detect_enhanced_frequency_anomalies(data)
+        outliers_correlation = self._detect_enhanced_correlation_anomalies(data)
+        outliers_snr = self._detect_signal_noise_anomalies(data)
+
+        # Combine all methods with confidence scoring
+        candidate_points = self._combine_detection_methods(
+            data, outliers_statistical, outliers_isolation,
+            outliers_frequency, outliers_correlation, outliers_snr
+        )
+
+        # Apply temporal consistency filter
+        consistent_leakage = self._filter_temporal_consistency(data, candidate_points)
+
+        # Apply signal-to-noise validation
+        validated_leakage = self._validate_signal_noise_ratio(data, consistent_leakage)
+
+        for point in validated_leakage:
+            idx = point['index']
             if idx < len(data):
                 point_data = data.iloc[idx]
                 leakage_point = {
@@ -57,24 +94,17 @@ class LayerDetector:
                     'strength': abs(point_data['combined_amplitude']),
                     'audio_amplitude': point_data.get('audio_amplitude', 0),
                     'radio_amplitude': point_data.get('radio_amplitude', 0),
-                    'detection_methods': []
+                    'detection_methods': point['methods'],
+                    'confidence_score': point['confidence'],
+                    'snr_ratio': point.get('snr_ratio', 0),
+                    'frequency_range': self._classify_frequency_range(point_data['frequency'])
                 }
-                
-                # Record which methods detected this point
-                if idx in outliers_statistical:
-                    leakage_point['detection_methods'].append('statistical')
-                if idx in outliers_isolation:
-                    leakage_point['detection_methods'].append('isolation_forest')
-                if idx in outliers_frequency:
-                    leakage_point['detection_methods'].append('frequency_domain')
-                if idx in outliers_correlation:
-                    leakage_point['detection_methods'].append('correlation')
-                    
+
                 leakage_points.append(leakage_point)
-        
-        # Sort by strength (descending)
-        leakage_points.sort(key=lambda x: x['strength'], reverse=True)
-        
+
+        # Sort by confidence score and strength
+        leakage_points.sort(key=lambda x: (x['confidence_score'], x['strength']), reverse=True)
+
         return leakage_points
         
     def detect_obscured_layers(self, data: pd.DataFrame) -> List[Dict]:
@@ -248,63 +278,316 @@ class LayerDetector:
         else:
             return 0.0
             
-    def _detect_statistical_outliers(self, data: pd.DataFrame, threshold: float = 3.0) -> List[int]:
-        """Detect outliers using statistical methods."""
+    def _detect_enhanced_statistical_outliers(self, data: pd.DataFrame) -> List[Dict]:
+        """Enhanced statistical outlier detection with multi-threshold approach."""
         outliers = []
-        
+
         if 'combined_amplitude' in data.columns:
-            z_scores = np.abs(zscore(data['combined_amplitude']))
-            outliers.extend(np.where(z_scores > threshold)[0].tolist())
-            
+            amplitudes = data['combined_amplitude'].values
+
+            # Multi-threshold detection
+            thresholds = [2.5, 3.0, 3.5, 4.0]  # Progressive thresholds
+            weights = [0.3, 0.4, 0.2, 0.1]     # Confidence weights
+
+            for threshold, weight in zip(thresholds, weights):
+                z_scores = np.abs(zscore(amplitudes))
+                outlier_indices = np.where(z_scores > threshold)[0]
+
+                for idx in outlier_indices:
+                    outliers.append({
+                        'index': idx,
+                        'confidence': weight,
+                        'method': 'statistical',
+                        'threshold': threshold,
+                        'z_score': z_scores[idx]
+                    })
+
+        return outliers
+
+    def _detect_enhanced_frequency_anomalies(self, data: pd.DataFrame) -> List[Dict]:
+        """Enhanced frequency domain analysis with adaptive thresholds."""
+        outliers = []
+
+        # Frequency-specific thresholds
+        freq_ranges = [
+            (0, 1000, 2.0),      # Low frequency: more sensitive
+            (1000, 10000, 2.5),   # Audio range: moderate
+            (10000, 50000, 3.0),  # Radio range: standard
+            (50000, float('inf'), 3.5)  # High frequency: less sensitive
+        ]
+
+        for freq_min, freq_max, threshold in freq_ranges:
+            range_mask = (data['frequency'] >= freq_min) & (data['frequency'] < freq_max)
+            range_data = data[range_mask]
+
+            if len(range_data) == 0:
+                continue
+
+            # Derivative-based detection
+            if 'audio_derivative' in range_data.columns:
+                deriv_values = range_data['audio_derivative'].abs()
+                deriv_threshold = np.percentile(deriv_values, 95)
+                outlier_mask = deriv_values > deriv_threshold
+
+                for local_idx in np.where(outlier_mask)[0]:
+                    global_idx = range_data.index[local_idx]
+                    outliers.append({
+                        'index': global_idx,
+                        'confidence': 0.6,
+                        'method': 'frequency_domain',
+                        'frequency_range': (freq_min, freq_max),
+                        'derivative_value': deriv_values.iloc[local_idx]
+                    })
+
+            if 'radio_derivative' in range_data.columns:
+                deriv_values = range_data['radio_derivative'].abs()
+                deriv_threshold = np.percentile(deriv_values, 95)
+                outlier_mask = deriv_values > deriv_threshold
+
+                for local_idx in np.where(outlier_mask)[0]:
+                    global_idx = range_data.index[local_idx]
+                    outliers.append({
+                        'index': global_idx,
+                        'confidence': 0.6,
+                        'method': 'frequency_domain',
+                        'frequency_range': (freq_min, freq_max),
+                        'derivative_value': deriv_values.iloc[local_idx]
+                    })
+
+        return outliers
+
+    def _detect_enhanced_correlation_anomalies(self, data: pd.DataFrame) -> List[Dict]:
+        """Enhanced correlation analysis with temporal patterns."""
+        outliers = []
+
+        if 'audio_amplitude' in data.columns and 'radio_amplitude' in data.columns:
+            # Multiple window sizes for correlation analysis
+            window_sizes = [20, 50, 100]
+            weights = [0.4, 0.4, 0.2]
+
+            for window_size, weight in zip(window_sizes, weights):
+                if window_size >= len(data):
+                    continue
+
+                # Rolling correlation with different methods
+                rolling_corr = data['audio_amplitude'].rolling(window_size).corr(
+                    data['radio_amplitude']
+                ).fillna(0)
+
+                # Detect unusual correlations (too high or too low)
+                corr_threshold_high = np.percentile(np.abs(rolling_corr), 90)
+                corr_threshold_low = np.percentile(np.abs(rolling_corr), 10)
+
+                high_corr_mask = np.abs(rolling_corr) > corr_threshold_high
+                low_corr_mask = np.abs(rolling_corr) < corr_threshold_low
+
+                for mask, threshold_type in [(high_corr_mask, 'high'), (low_corr_mask, 'low')]:
+                    outlier_indices = np.where(mask)[0]
+                    for idx in outlier_indices:
+                        outliers.append({
+                            'index': idx,
+                            'confidence': weight,
+                            'method': 'correlation',
+                            'correlation_value': rolling_corr.iloc[idx],
+                            'window_size': window_size,
+                            'threshold_type': threshold_type
+                        })
+
+        return outliers
+
+    def _detect_signal_noise_anomalies(self, data: pd.DataFrame) -> List[Dict]:
+        """Detect anomalies based on signal-to-noise ratio."""
+        outliers = []
+
+        if 'combined_amplitude' in data.columns:
+            amplitudes = data['combined_amplitude'].values
+
+            # Calculate local noise estimate using rolling standard deviation
+            window_sizes = [10, 25, 50]
+            weights = [0.3, 0.4, 0.3]
+
+            for window_size, weight in zip(window_sizes, weights):
+                if window_size >= len(amplitudes):
+                    continue
+
+                # Rolling noise estimate
+                rolling_noise = pd.Series(amplitudes).rolling(window_size).std().fillna(0)
+
+                # Calculate SNR
+                snr_values = amplitudes / (rolling_noise + 1e-8)
+
+                # Detect points with unusually high SNR (potential leakage)
+                snr_threshold = np.percentile(snr_values, 95)
+                outlier_mask = snr_values > snr_threshold
+
+                outlier_indices = np.where(outlier_mask)[0]
+                for idx in outlier_indices:
+                    outliers.append({
+                        'index': idx,
+                        'confidence': weight,
+                        'method': 'signal_noise',
+                        'snr_ratio': snr_values[idx],
+                        'noise_estimate': rolling_noise.iloc[idx],
+                        'window_size': window_size
+                    })
+
         return outliers
         
     def _detect_isolation_outliers(self, data: pd.DataFrame) -> List[int]:
         """Detect outliers using Isolation Forest."""
-        features = self._prepare_anomaly_features(data)
+        # Validate and clean data first
+        clean_data = self._validate_and_clean_data(data)
         
-        if len(features) == 0:
+        features = self._prepare_anomaly_features(clean_data)
+        
+        if len(features) == 0 or len(features) < 2:
             return []
             
-        outlier_labels = self.isolation_forest.fit_predict(features)
-        outliers = np.where(outlier_labels == -1)[0].tolist()
+        try:
+            outlier_labels = self.isolation_forest.fit_predict(features)
+            outliers = np.where(outlier_labels == -1)[0].tolist()
+        except Exception as e:
+            # If sklearn fails, return empty list
+            print(f"Warning: Isolation Forest failed: {e}")
+            outliers = []
         
         return outliers
         
-    def _detect_frequency_anomalies(self, data: pd.DataFrame) -> List[int]:
-        """Detect anomalies in frequency domain."""
-        outliers = []
-        
-        # Large derivative changes
-        if 'audio_derivative' in data.columns:
-            deriv_threshold = np.percentile(np.abs(data['audio_derivative']), 95)
-            outliers.extend(np.where(np.abs(data['audio_derivative']) > deriv_threshold)[0].tolist())
-            
-        if 'radio_derivative' in data.columns:
-            deriv_threshold = np.percentile(np.abs(data['radio_derivative']), 95)
-            outliers.extend(np.where(np.abs(data['radio_derivative']) > deriv_threshold)[0].tolist())
-            
-        return outliers
-        
-    def _detect_correlation_anomalies(self, data: pd.DataFrame) -> List[int]:
-        """Detect anomalies using correlation analysis."""
-        outliers = []
-        
-        if 'audio_amplitude' in data.columns and 'radio_amplitude' in data.columns:
-            # Rolling correlation
-            window_size = min(50, len(data) // 10)
-            if window_size > 5:
-                rolling_corr = data['audio_amplitude'].rolling(window_size).corr(
-                    data['radio_amplitude']
-                ).fillna(0)
-                
-                # Find points with unusual correlation
-                corr_threshold = np.percentile(np.abs(rolling_corr), 90)
-                outliers.extend(np.where(np.abs(rolling_corr) > corr_threshold)[0].tolist())
-                
-        return outliers
+    def _combine_detection_methods(self, data: pd.DataFrame, *method_results) -> List[Dict]:
+        """Combine results from multiple detection methods with confidence scoring."""
+        point_confidence = {}
+
+        # Collect all candidate points
+        for method_outliers in method_results:
+            for outlier in method_outliers:
+                # Handle both old format (int) and new format (dict)
+                if isinstance(outlier, int):
+                    # Convert old format to new format
+                    idx = outlier
+                    outlier_info = {
+                        'index': idx,
+                        'confidence': 0.5,  # Default confidence for old methods
+                        'method': 'legacy',
+                        'method_details': []
+                    }
+                else:
+                    # New format
+                    idx = outlier['index']
+                    outlier_info = outlier
+
+                if idx not in point_confidence:
+                    point_confidence[idx] = {
+                        'index': idx,
+                        'confidence': 0.0,
+                        'methods': [],
+                        'method_details': []
+                    }
+
+                point_confidence[idx]['confidence'] += outlier_info['confidence']
+                point_confidence[idx]['methods'].append(outlier_info['method'])
+                point_confidence[idx]['method_details'].append(outlier_info)
+
+        # Filter points that appear in multiple methods (higher confidence)
+        candidates = []
+        for idx, info in point_confidence.items():
+            # Require at least 2 detection methods or high single-method confidence
+            if len(info['methods']) >= 2 or info['confidence'] >= 0.7:
+                # Boost confidence for multi-method detection
+                if len(info['methods']) >= 2:
+                    info['confidence'] *= 1.2
+                info['confidence'] = min(1.0, info['confidence'])
+                candidates.append(info)
+
+        return candidates
+
+    def _filter_temporal_consistency(self, data: pd.DataFrame, candidates: List[Dict]) -> List[Dict]:
+        """Filter candidates based on temporal consistency (persistence over time)."""
+        consistent_candidates = []
+
+        for candidate in candidates:
+            idx = candidate['index']
+
+            # Check neighboring points for similar anomalies
+            window_size = min(10, len(data) // 20)  # Adaptive window size
+            start_idx = max(0, idx - window_size)
+            end_idx = min(len(data), idx + window_size + 1)
+
+            window_data = data.iloc[start_idx:end_idx]
+
+            # Count similar anomalies in the temporal window
+            if 'combined_amplitude' in window_data.columns:
+                center_amplitude = abs(data.iloc[idx]['combined_amplitude'])
+                window_amplitudes = window_data['combined_amplitude'].abs()
+
+                # Find points within 50% of center amplitude
+                similar_points = np.sum(
+                    (window_amplitudes >= center_amplitude * 0.5) &
+                    (window_amplitudes <= center_amplitude * 1.5)
+                )
+
+                # Require at least 3 similar points in temporal window
+                if similar_points >= 3:
+                    candidate['temporal_consistency'] = similar_points / len(window_data)
+                    consistent_candidates.append(candidate)
+                else:
+                    # Reduce confidence for isolated anomalies
+                    candidate['confidence'] *= 0.7
+
+        return consistent_candidates
+
+    def _validate_signal_noise_ratio(self, data: pd.DataFrame, candidates: List[Dict]) -> List[Dict]:
+        """Validate candidates using signal-to-noise ratio analysis."""
+        validated_candidates = []
+
+        for candidate in candidates:
+            idx = candidate['index']
+
+            # Calculate local SNR
+            window_size = 20
+            start_idx = max(0, idx - window_size // 2)
+            end_idx = min(len(data), idx + window_size // 2 + 1)
+
+            window_data = data.iloc[start_idx:end_idx]
+
+            if 'combined_amplitude' in window_data.columns and len(window_data) > 1:
+                signal_amplitude = abs(data.iloc[idx]['combined_amplitude'])
+                noise_amplitude = window_data['combined_amplitude'].std()
+
+                if noise_amplitude > 0:
+                    snr = signal_amplitude / noise_amplitude
+
+                    # Require minimum SNR for leakage detection
+                    min_snr_threshold = 3.0
+                    if snr >= min_snr_threshold:
+                        candidate['snr_ratio'] = snr
+                        candidate['noise_level'] = noise_amplitude
+                        validated_candidates.append(candidate)
+                    else:
+                        # Reduce confidence for low SNR points
+                        candidate['confidence'] *= 0.8
+
+        return validated_candidates
+
+    def _classify_frequency_range(self, frequency: float) -> str:
+        """Classify frequency into standard ranges."""
+        if frequency < 1000:
+            return 'ELF/VLF'
+        elif frequency < 10000:
+            return 'Audio'
+        elif frequency < 30000:
+            return 'VHF Low'
+        elif frequency < 50000:
+            return 'VHF High'
+        elif frequency < 100000:
+            return 'UHF Low'
+        else:
+            return 'UHF High'
         
     def _prepare_layer_features(self, data: pd.DataFrame) -> np.ndarray:
         """Prepare features for layer detection clustering."""
+        # Validate and clean data first
+        data = self._validate_and_clean_data(data)
+        
         feature_cols = []
         
         # Basic amplitude features
@@ -332,9 +615,14 @@ class LayerDetector:
             
         features = data[feature_cols].fillna(0).values
         
-        # Normalize features
+        # Normalize features with error handling
         if len(features) > 0:
-            features = self.scaler.fit_transform(features)
+            try:
+                features = self.scaler.fit_transform(features)
+            except Exception as e:
+                print(f"Warning: Feature scaling failed: {e}")
+                # Return unscaled features if scaling fails
+                pass
             
         return features
         

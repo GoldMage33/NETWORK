@@ -1,0 +1,23 @@
+NETWORK Analysis Cycle #3
+Timestamp: 2025-10-15 12:07:29
+==================================================
+
+ANALYSIS RESULTS:
+Anomaly Score: 0.386
+Leakage Points: 254
+Obscured Layers: 0
+Network Layers: 10
+Connectivity Score: N/A
+
+TOP LEAKAGE POINTS:
+1. 100.2 Hz - Strength: 11.234
+2. 500.2 Hz - Strength: 10.141
+3. 600.3 Hz - Strength: 9.836
+4. 300.2 Hz - Strength: 9.414
+5. 3700.6 Hz - Strength: 9.286
+
+METADATA:
+Audio Samples: 110249
+Radio Samples: 110249
+Analysis Duration: 5.0s
+Frequency Resolution: 100.0 Hz
