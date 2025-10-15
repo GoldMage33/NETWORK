@@ -1,0 +1,35 @@
+NETWORK Frequency Analysis System - Deployment Summary
+======================================================
+
+Deployment Date: Wed Oct 15 10:55:52 CEST 2025
+Python Version: 3.9.6
+System: Darwin arm64
+
+✅ Deployment Status: SUCCESSFUL
+
+Components Verified:
+- Core Analysis Engine ✓
+- Live Console Monitor ✓
+- Background Monitor ✓
+- Enhanced Monitor ✓
+- Data Processing ✓
+- Visualization System ✓
+- Test Suite (11/11 tests passing) ✓
+
+Available Commands:
+- python3 main.py                    # Run main analysis
+- python3 live_console_monitor.py    # Start live monitoring
+- python3 background_monitor.py      # Background monitoring
+- python3 enhanced_monitor.py        # Enhanced monitoring
+- python3 gui_app.py                 # GUI application
+
+Data Directories:
+- ./data/                           # Input data files
+- ./visualizations/                 # Generated visualizations
+- ./logs/                          # Log files
+
+For Docker deployment:
+- docker build -t network-analyzer .
+- docker-compose up [service-name]
+
+For more information, see DEPLOYMENT.md
