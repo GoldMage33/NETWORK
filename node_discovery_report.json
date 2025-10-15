@@ -1,0 +1,619 @@
+{
+  "report_title": "NETWORK Node Discovery Report",
+  "generated_at": "2025-10-15T10:26:28.647693",
+  "discovery_summary": {
+    "total_nodes_discovered": 35,
+    "node_types_found": {
+      "network_devices": 5,
+      "frequency_nodes": 10,
+      "communication_nodes": 4,
+      "monitoring_nodes": 10,
+      "data_nodes": 5,
+      "topology_nodes": 1
+    },
+    "risk_distribution": {
+      "critical": 2,
+      "high": 15,
+      "low": 1,
+      "medium": 1,
+      "unknown": 16
+    },
+    "total_relationships": 76
+  },
+  "node_categories": {
+    "network_devices": [
+      {
+        "id": "device_192_168_1_1",
+        "type": "network_device",
+        "risk_level": "critical",
+        "coordinates": {
+          "x": 51.4642,
+          "y": 31.09815
+        },
+        "key_attributes": {
+          "ip_address": "192.168.1.1",
+          "hostname": "funbox.home",
+          "device_type": "router",
+          "response_time_ms": 7.321,
+          "status": "active",
+          "risk_level": "critical"
+        }
+      },
+      {
+        "id": "device_192_168_1_33",
+        "type": "network_device",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 104.6984,
+          "y": 1031.0238
+        },
+        "key_attributes": {
+          "ip_address": "192.168.1.33",
+          "hostname": "device-1203.home",
+          "device_type": "network_device",
+          "response_time_ms": 273.492,
+          "status": "slow",
+          "risk_level": "high"
+        }
+      },
+      {
+        "id": "device_192_168_1_34",
+        "type": "network_device",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 110.59819999999999,
+          "y": 1065.44865
+        },
+        "key_attributes": {
+          "ip_address": "192.168.1.34",
+          "hostname": "device-1205.home",
+          "device_type": "network_device",
+          "response_time_ms": 302.991,
+          "status": "slow",
+          "risk_level": "high"
+        }
+      },
+      {
+        "id": "device_192_168_1_35",
+        "type": "network_device",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 109.61939999999998,
+          "y": 1094.71455
+        },
+        "key_attributes": {
+          "ip_address": "192.168.1.35",
+          "hostname": "device-1204.home",
+          "device_type": "network_device",
+          "response_time_ms": 298.097,
+          "status": "slow",
+          "risk_level": "high"
+        }
+      },
+      {
+        "id": "device_192_168_1_133",
+        "type": "network_device",
+        "risk_level": "low",
+        "coordinates": {
+          "x": 51.0658,
+          "y": 3990.79935
+        },
+        "key_attributes": {
+          "ip_address": "192.168.1.133",
+          "hostname": "device-1206.home",
+          "device_type": "network_device",
+          "response_time_ms": 5.329,
+          "status": "active",
+          "risk_level": "low"
+        }
+      }
+    ],
+    "frequency_nodes": [
+      {
+        "id": "freq_1203374",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 60.1687404740474,
+          "y": 306.60457724597563
+        },
+        "key_attributes": {
+          "frequency_hz": 1203374.809480948,
+          "strength_db": 10.660457724597562,
+          "rank": 1,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      },
+      {
+        "id": "freq_1110809",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 55.54045274527453,
+          "y": 306.0794160688066
+        },
+        "key_attributes": {
+          "frequency_hz": 1110809.0549054905,
+          "strength_db": 10.607941606880658,
+          "rank": 2,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      },
+      {
+        "id": "freq_1295940",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 64.79702820282029,
+          "y": 305.68114836808866
+        },
+        "key_attributes": {
+          "frequency_hz": 1295940.5640564056,
+          "strength_db": 10.568114836808864,
+          "rank": 3,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      },
+      {
+        "id": "freq_1388506",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 69.42531593159316,
+          "y": 304.7577194902017
+        },
+        "key_attributes": {
+          "frequency_hz": 1388506.3186318632,
+          "strength_db": 10.475771949020166,
+          "rank": 4,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      },
+      {
+        "id": "freq_1481072",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 74.05360366036604,
+          "y": 303.8342906123147
+        },
+        "key_attributes": {
+          "frequency_hz": 1481072.0732073206,
+          "strength_db": 10.38342906123147,
+          "rank": 5,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      },
+      {
+        "id": "freq_1018243",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 50.912165016501646,
+          "y": 303.74752193312577
+        },
+        "key_attributes": {
+          "frequency_hz": 1018243.300330033,
+          "strength_db": 10.374752193312577,
+          "rank": 6,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      },
+      {
+        "id": "freq_1573637",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 78.6818913891389,
+          "y": 302.9108617344277
+        },
+        "key_attributes": {
+          "frequency_hz": 1573637.827782778,
+          "strength_db": 10.291086173442771,
+          "rank": 7,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      },
+      {
+        "id": "freq_1666203",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 83.31017911791179,
+          "y": 301.98743285654075
+        },
+        "key_attributes": {
+          "frequency_hz": 1666203.5823582357,
+          "strength_db": 10.198743285654073,
+          "rank": 8,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      },
+      {
+        "id": "freq_925677",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 46.28387728772877,
+          "y": 301.415627797445
+        },
+        "key_attributes": {
+          "frequency_hz": 925677.5457545754,
+          "strength_db": 10.141562779744497,
+          "rank": 9,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      },
+      {
+        "id": "freq_1758769",
+        "type": "frequency_leakage",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 87.93846684668468,
+          "y": 301.00422202395623
+        },
+        "key_attributes": {
+          "frequency_hz": 1758769.3369336934,
+          "strength_db": 10.100422202395622,
+          "rank": 10,
+          "risk_level": "high",
+          "global_correlation": "unknown"
+        }
+      }
+    ],
+    "communication_nodes": [
+      {
+        "id": "comm_tag_it",
+        "type": "communication_tag",
+        "risk_level": "medium",
+        "coordinates": {
+          "x": 300,
+          "y": 400
+        },
+        "key_attributes": {
+          "tag_phrase": "tag it",
+          "frequency_range": "100000-200000 Hz",
+          "min_strength": 5.0,
+          "confidence_max": 0.55,
+          "risk_level": "medium"
+        }
+      },
+      {
+        "id": "comm_neuralink",
+        "type": "communication_tag",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 500,
+          "y": 450
+        },
+        "key_attributes": {
+          "tag_phrase": "neuralink",
+          "frequency_range": "200000-300000 Hz",
+          "min_strength": 4.5,
+          "confidence_max": 0.77,
+          "risk_level": "high"
+        }
+      },
+      {
+        "id": "detect_tag_it_185151",
+        "type": "detection_event",
+        "risk_level": "high",
+        "coordinates": {
+          "x": 218.51515,
+          "y": 410.0
+        },
+        "key_attributes": {
+          "phrase": "tag it",
+          "frequency": 185151.5,
+          "strength": 5.527,
+          "confidence": 0.55,
+          "risk_level": "high"
+        }
+      },
+      {
+        "id": "detect_neuralink_277717",
+        "type": "detection_event",
+        "risk_level": "critical",
+        "coordinates": {
+          "x": 227.77173,
+          "y": 454.0
+        },
+        "key_attributes": {
+          "phrase": "neuralink",
+          "frequency": 277717.3,
+          "strength": 6.957,
+          "confidence": 0.77,
+          "risk_level": "critical"
+        }
+      }
+    ],
+    "monitoring_nodes": [
+      {
+        "id": "monitor_network_monitor_2",
+        "type": "monitoring_instance",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 600,
+          "y": 250
+        },
+        "key_attributes": {
+          "log_file": "network_monitor_2.log",
+          "size_bytes": 7796,
+          "last_modified": "2025-10-15T09:52:49.925580",
+          "status": "completed"
+        }
+      },
+      {
+        "id": "monitor_network_monitor_3",
+        "type": "monitoring_instance",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 600,
+          "y": 250
+        },
+        "key_attributes": {
+          "log_file": "network_monitor_3.log",
+          "size_bytes": 7796,
+          "last_modified": "2025-10-15T09:52:51.560185",
+          "status": "completed"
+        }
+      },
+      {
+        "id": "monitor_network_monitor_1",
+        "type": "monitoring_instance",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 600,
+          "y": 250
+        },
+        "key_attributes": {
+          "log_file": "network_monitor_1.log",
+          "size_bytes": 7807,
+          "last_modified": "2025-10-15T09:52:53.859916",
+          "status": "completed"
+        }
+      },
+      {
+        "id": "monitor_network_present_monitor",
+        "type": "monitoring_instance",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 600,
+          "y": 250
+        },
+        "key_attributes": {
+          "log_file": "network_present_monitor.log",
+          "size_bytes": 982,
+          "last_modified": "2025-10-15T09:55:21.826492",
+          "status": "completed"
+        }
+      },
+      {
+        "id": "monitor_network_bg_monitor_3",
+        "type": "monitoring_instance",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 750,
+          "y": 180
+        },
+        "key_attributes": {
+          "log_file": "network_bg_monitor_3.log",
+          "size_bytes": 1155,
+          "last_modified": "2025-10-15T09:52:49.767690",
+          "status": "active"
+        }
+      },
+      {
+        "id": "monitor_network_bg_monitor_2",
+        "type": "monitoring_instance",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 750,
+          "y": 180
+        },
+        "key_attributes": {
+          "log_file": "network_bg_monitor_2.log",
+          "size_bytes": 1155,
+          "last_modified": "2025-10-15T09:52:47.785816",
+          "status": "active"
+        }
+      },
+      {
+        "id": "monitor_network_bg_monitor_1",
+        "type": "monitoring_instance",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 750,
+          "y": 180
+        },
+        "key_attributes": {
+          "log_file": "network_bg_monitor_1.log",
+          "size_bytes": 1155,
+          "last_modified": "2025-10-15T09:52:46.026277",
+          "status": "active"
+        }
+      },
+      {
+        "id": "monitor_network_bg_monitor_4",
+        "type": "monitoring_instance",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 750,
+          "y": 180
+        },
+        "key_attributes": {
+          "log_file": "network_bg_monitor_4.log",
+          "size_bytes": 1155,
+          "last_modified": "2025-10-15T09:52:52.455637",
+          "status": "active"
+        }
+      },
+      {
+        "id": "monitor_network_sigma_monitor",
+        "type": "monitoring_instance",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 600,
+          "y": 250
+        },
+        "key_attributes": {
+          "log_file": "network_sigma_monitor.log",
+          "size_bytes": 1667,
+          "last_modified": "2025-10-15T09:54:48.110242",
+          "status": "completed"
+        }
+      },
+      {
+        "id": "monitoring_summary",
+        "type": "monitoring_coordinator",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 600,
+          "y": 100
+        },
+        "key_attributes": {
+          "total_sessions": 8,
+          "active_instances": 0,
+          "total_runtime": 3600,
+          "status": "coordinator"
+        }
+      }
+    ],
+    "data_nodes": [
+      {
+        "id": "data_audio_data",
+        "type": "data_source",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 100,
+          "y": 500
+        },
+        "key_attributes": {
+          "source_name": "audio_data",
+          "description": "data/sample_audio.csv (31 samples)",
+          "data_type": "frequency_data"
+        }
+      },
+      {
+        "id": "data_radio_data",
+        "type": "data_source",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 200,
+          "y": 500
+        },
+        "key_attributes": {
+          "source_name": "radio_data",
+          "description": "data/sample_radio.csv (31 samples)",
+          "data_type": "frequency_data"
+        }
+      },
+      {
+        "id": "data_combined_data",
+        "type": "data_source",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 150,
+          "y": 450
+        },
+        "key_attributes": {
+          "source_name": "combined_data",
+          "description": "data/combined_frequency_analysis.csv",
+          "data_type": "analysis_data"
+        }
+      },
+      {
+        "id": "data_log_directory",
+        "type": "data_source",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 300,
+          "y": 550
+        },
+        "key_attributes": {
+          "source_name": "log_directory",
+          "description": "/tmp/network_*.log",
+          "data_type": "monitoring_data"
+        }
+      },
+      {
+        "id": "data_report_file",
+        "type": "data_source",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 250,
+          "y": 475
+        },
+        "key_attributes": {
+          "source_name": "report_file",
+          "description": "comprehensive_connection_report.md",
+          "data_type": "report_data"
+        }
+      }
+    ],
+    "topology_nodes": [
+      {
+        "id": "topology_main",
+        "type": "topology_core",
+        "risk_level": "unknown",
+        "coordinates": {
+          "x": 400,
+          "y": 50
+        },
+        "key_attributes": {
+          "anomaly_score": 0.42217145068759565,
+          "leakage_points": 1998,
+          "topology_layers": 0,
+          "connectivity_score": 0,
+          "status": "isolated"
+        }
+      }
+    ]
+  },
+  "critical_findings": [
+    "🚨 2 critical-risk nodes detected",
+    "⚠️ High average device response time: 177.45ms",
+    "🔒 1 compromised communication channels detected"
+  ],
+  "performance_insights": {
+    "average_response_time": 177.45,
+    "slowest_device": "device-1205.home",
+    "fastest_device": "device-1206.home",
+    "response_time_range": "5.3ms - 303.0ms"
+  },
+  "connectivity_analysis": {
+    "total_relationships": 76,
+    "average_connections_per_node": 2.1714285714285713,
+    "most_connected_nodes": [
+      {
+        "node_id": "device_192_168_1_1",
+        "connections": 10
+      },
+      {
+        "node_id": "device_192_168_1_33",
+        "connections": 10
+      },
+      {
+        "node_id": "device_192_168_1_34",
+        "connections": 10
+      },
+      {
+        "node_id": "device_192_168_1_35",
+        "connections": 10
+      },
+      {
+        "node_id": "device_192_168_1_133",
+        "connections": 10
+      }
+    ]
+  }
+}

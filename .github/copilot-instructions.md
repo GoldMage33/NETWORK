@@ -21,7 +21,7 @@ This project is a Python application for analyzing audio and radio frequencies t
 - Matplotlib, Seaborn, Plotly for visualization
 
 ## Usage
-Run `python main.py` to execute the main analysis pipeline. The system will automatically generate sample data if input files are not found.
+Run `python main.pypython3 gui_app.py` to execute the main analysis pipeline. The system will automatically generate sample data if input files are not found.
 
 ## Development Notes
 - Focus on performance optimization for large frequency datasets
