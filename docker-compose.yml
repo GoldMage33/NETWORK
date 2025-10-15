@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  network-analyzer:
+    build: .
+    container_name: network-frequency-analyzer
+    volumes:
+      - ./data:/app/data
+      - ./visualizations:/app/visualizations
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - NETWORK_DATA_DIR=/app/data
+      - NETWORK_LOG_LEVEL=INFO
+    command: python3 main.py
+    restart: unless-stopped
+
+  live-monitor:
+    build: .
+    container_name: network-live-monitor
+    volumes:
+      - ./data:/app/data
+      - ./visualizations:/app/visualizations
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - NETWORK_DATA_DIR=/app/data
+      - NETWORK_LOG_LEVEL=INFO
+    command: python3 live_console_monitor.py
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+  background-monitor:
+    build: .
+    container_name: network-background-monitor
+    volumes:
+      - ./data:/app/data
+      - ./visualizations:/app/visualizations
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - NETWORK_DATA_DIR=/app/data
+      - NETWORK_LOG_LEVEL=INFO
+      - INSTANCE_ID=1
+    command: ["python3", "background_monitor.py", "--instance", "1", "--log-file", "/app/logs/background_monitor.log"]
+    restart: unless-stopped
+
+  enhanced-monitor:
+    build: .
+    container_name: network-enhanced-monitor
+    volumes:
+      - ./data:/app/data
+      - ./visualizations:/app/visualizations
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - NETWORK_DATA_DIR=/app/data
+      - NETWORK_LOG_LEVEL=INFO
+    command: python3 enhanced_monitor.py
+    restart: unless-stopped
+    privileged: true  # For network device scanning
+    stdin_open: true
+    tty: true
+
+  gui-app:
+    build: .
+    container_name: network-gui-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./visualizations:/app/visualizations
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - NETWORK_DATA_DIR=/app/data
+      - NETWORK_LOG_LEVEL=INFO
+      - DISPLAY=${DISPLAY}
+    command: python3 gui_app.py
+    restart: unless-stopped
+
+volumes:
+  network-data:
+  network-visualizations:
+  network-logs:
